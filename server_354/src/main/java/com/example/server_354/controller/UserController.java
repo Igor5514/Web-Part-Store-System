@@ -2,6 +2,7 @@ package com.example.server_354.controller;
 
 import com.example.server_354.Services.UserService;
 import com.example.server_354.object.LoginRequest;
+import com.example.server_354.object.RoleRequest;
 import com.example.server_354.object.User;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
@@ -23,7 +24,10 @@ public class UserController {
     @PostMapping("/add")
     public ResponseEntity<Map<String,String>> addUser(@RequestBody User user){
         Map<String, String> response = new HashMap<>();
+        RoleRequest roleRequest = new RoleRequest(user.getRole(), user.getEmail());
         try{
+            userService.addUserRoleRequest(roleRequest);
+            user.setRole("user");
             userService.createUser(user);
             response.put("message", "User created successfully");
             return ResponseEntity.ok(response);
@@ -63,6 +67,7 @@ public class UserController {
 
     @PostMapping("/getResByEmail")
     public boolean getResponseByEmail(@RequestBody Map<String,String> emailMap){
+        System.out.println(emailMap.get("email"));
         return userService.getResponseByEmail(emailMap.get("email"));
     }
 
@@ -72,9 +77,6 @@ public class UserController {
                                              @RequestBody String password,
                                              @RequestBody String phoneNumber,
                                              @RequestBody String role){
-        if(!role.equals("user")){
-            role = "user";
-        }
         if(userService.updateUser(fullName, email, password, phoneNumber, role)){
             return ResponseEntity.ok("user updated successfully");
         }else{

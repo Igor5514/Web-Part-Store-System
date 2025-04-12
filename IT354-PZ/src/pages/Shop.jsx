@@ -1,15 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import FirstCard from "../shop_components/FirstCard";
 import SecondCard from "../shop_components/SecondCard"
 import "./pages.css"
 import CarSelectionMenu from "../shop_components/CarSelectionMenu.jsx";
 import image2 from "../images/service.jpg";
+import image3 from "../images/cart.png";
 
 export const Shop = () => {
     const [group, setGroup] = useState([]);
     const [partsList, setPartsList] = useState([]);
     const [isFirstCardContainerActive, setIsFirstCardContainerActive] = useState(true);
     const [selectedGroup, setSelectedGroup] = useState("");
+    const [selectedCar, setSelectedCar] = useState({});
 
     function setFirstCardActive(value){
         setIsFirstCardContainerActive(value)
@@ -41,6 +43,19 @@ export const Shop = () => {
     return (
         <>
             <div className="main-shop-container">
+                <div className='shop-header' style={{display: "flex", flexDirection: "column"}}>
+                    <div className='header-container'>
+                        <button className='header-button'>Go back</button>
+                        <div className='search-container'>
+                            <input type="text" name="part-input" className=" bg-secondary text-light border-0" />
+                            <button className='header-button'  >Search</button>
+                        </div>
+                        <button className='header-button'>Cart  <img src={image3} style={{width: "1.5em"}}/></button>
+                    </div>
+                    
+                    <h3 className='selected-car-title'>Car: </h3>
+                </div>
+                
                 <div className="main-menu-container">
                     <CarSelectionMenu />
                     <div className="image-container">
@@ -48,7 +63,7 @@ export const Shop = () => {
                         <p className="image-title">Auto Parts & Accessories</p>
                     </div>
                 </div>
-                <h1 className="shop-title">Order best quality parts online</h1>
+                <h3 className="shop-title">Order best quality parts online</h3>
                 <div className="part-carts-grid-container">
                     {
                         isFirstCardContainerActive && group.length > 0 ? group.map((item, index) => {

@@ -1,0 +1,207 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\cs322 c# programski jezik\\projekat\\cs322-pz01-igorjeremic5385\\projkat\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\cs322 c# programski jezik\\projekat\\cs322-pz01-igorjeremic5385\\projkat\\forms\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\forms\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\cs322 c# programski jezik\\projekat\\cs322-pz01-igorjeremic5385\\projkat\\forms\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\forms\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\cs322 c# programski jezik\\projekat\\cs322-pz01-igorjeremic5385\\projkat\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\requestservicecomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\requestservicecomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projkat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projkat.csproj|solutionrelative:projkat\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 83,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 317,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\Form1.cs",
+              "RelativeDocumentMoniker": "projkat\\Form1.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\Form1.cs [Design]",
+              "RelativeToolTip": "projkat\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T16:01:46.314Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegistrationForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\RegistrationForm.cs",
+              "RelativeDocumentMoniker": "projkat\\forms\\RegistrationForm.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\RegistrationForm.cs [Design]*",
+              "RelativeToolTip": "projkat\\forms\\RegistrationForm.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T19:34:19.376Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "projkat\\forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\LoginForm.cs [Design]*",
+              "RelativeToolTip": "projkat\\forms\\LoginForm.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T19:17:00.596Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegistrationForm.cs",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\RegistrationForm.cs",
+              "RelativeDocumentMoniker": "projkat\\forms\\RegistrationForm.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\RegistrationForm.cs*",
+              "RelativeToolTip": "projkat\\forms\\RegistrationForm.cs*",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAH4AAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T20:13:33.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "LoginForm.cs",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\LoginForm.cs",
+              "RelativeDocumentMoniker": "projkat\\forms\\LoginForm.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\LoginForm.cs*",
+              "RelativeToolTip": "projkat\\forms\\LoginForm.cs*",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAACQAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T19:16:38.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RequestServiceComponent.cs",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\RequestServiceComponent.cs",
+              "RelativeDocumentMoniker": "projkat\\RequestServiceComponent.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\RequestServiceComponent.cs",
+              "RelativeToolTip": "projkat\\RequestServiceComponent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T19:53:29.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\MainForm.cs",
+              "RelativeDocumentMoniker": "projkat\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\MainForm.cs [Design]",
+              "RelativeToolTip": "projkat\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T20:40:52.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\MainForm.cs",
+              "RelativeDocumentMoniker": "projkat\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\MainForm.cs",
+              "RelativeToolTip": "projkat\\MainForm.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACUAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T21:41:14.27Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\Form1.cs",
+              "RelativeDocumentMoniker": "projkat\\Form1.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\source\\repos\\CS322-PZ01-IgorJeremic5385\\projkat\\Form1.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\source\\repos\\CS322-PZ01-IgorJeremic5385\\projkat\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T21:21:06.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\User.cs",
+              "RelativeDocumentMoniker": "projkat\\User.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\User.cs",
+              "RelativeToolTip": "projkat\\User.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAADAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T17:15:12.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\Form1.cs",
+              "RelativeDocumentMoniker": "projkat\\Form1.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\CS322 C# programski jezik\\projekat\\CS322-PZ01-IgorJeremic5385\\projkat\\Form1.cs",
+              "RelativeToolTip": "projkat\\Form1.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAC4AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T11:33:43.504Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

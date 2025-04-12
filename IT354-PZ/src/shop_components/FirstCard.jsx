@@ -26,7 +26,7 @@ const FirstCard = ({title, paragraphs, img, setFirstCardActive, setPartsList}) =
 
      function buttonListener(e){
         e.preventDefault();
-        const h2Title = e.target.closest("div").querySelector("h2").textContent;
+        const h2Title = e.target.closest("div").querySelector("h3").textContent;
         console.log(h2Title)
         loadPartsType(h2Title)
         setFirstCardActive(false)
@@ -36,7 +36,7 @@ const FirstCard = ({title, paragraphs, img, setFirstCardActive, setPartsList}) =
     return(
         <div>
             <div className="main-card-container">
-                <h2 style={{ fontFamily: "'DM Sans', sans-serif" }}>{title}</h2>
+                <h3 style={{ fontFamily: "'DM Sans', sans-serif" }}>{title}</h3>
                 <div className="sub-main-container">
                     <div className="main-paragraph-cotnainer">
                         {

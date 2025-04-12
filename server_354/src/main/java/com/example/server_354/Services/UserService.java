@@ -1,5 +1,6 @@
 package com.example.server_354.Services;
 
+import com.example.server_354.object.RoleRequest;
 import com.example.server_354.object.User;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
@@ -11,10 +12,15 @@ import java.util.Optional;
 @Service
 public class UserService {
     private final UserRepository userRepository;
+    private final UserRoleRequestRepository userRoleRequestRepository;
 
-
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, UserRoleRequestRepository userRoleRequestRepository) {
         this.userRepository = userRepository;
+        this.userRoleRequestRepository = userRoleRequestRepository;
+    }
+
+    public void addUserRoleRequest(RoleRequest roleRequest){
+        userRoleRequestRepository.save(roleRequest);
     }
 
     public List<User> getAllUsers(){

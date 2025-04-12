@@ -38,7 +38,7 @@ const DropdownVehicleMenu = ({setValue,dropdownButtonText, dropdownItems, setIsD
         </div>
         <ul name="dropdown-input">
           {
-             items.length > 0 && items.map((item,index) => <li onClick={() => {
+            items.length > 0 && items.map((item,index) => <li onClick={() => {
               setValue(item);
               setListPresent(false);
               setDropdownText(item);
