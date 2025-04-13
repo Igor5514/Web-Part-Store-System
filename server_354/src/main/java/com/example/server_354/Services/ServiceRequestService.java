@@ -16,14 +16,12 @@ public class ServiceRequestService {
         this.serviceRequestRepository = serviceRequestRepository;
     }
 
+    public boolean checkForIsDoneStatus(int serviceId){
+        return serviceRequestRepository.checkForIsDoneStatus(serviceId);
+    }
+
     public ServiceRequest createServiceRequest(ServiceRequest serviceRequest) {
         try {
-            System.out.println(serviceRequest.getFullName());
-            System.out.println(serviceRequest.getEmail());
-            System.out.println(serviceRequest.getMechEmail());
-            System.out.println(serviceRequest.getProblemType());
-            System.out.println(serviceRequest.getProblemDescription());
-            System.out.println(serviceRequest.getisDone());
             return serviceRequestRepository.save(serviceRequest);
         } catch (Exception e) {
             System.err.println("Error creating service request: " + e.getMessage());
@@ -40,6 +38,24 @@ public class ServiceRequestService {
         }
     }
 
+    public List<ServiceRequest> getServiceRequestsByEmail(String email, String role) {
+        try {
+            List<ServiceRequest> requests;
+            if(role.equalsIgnoreCase("mechanic")){
+                requests =serviceRequestRepository.findAllByMechEmail(email);
+            }else{
+                requests = serviceRequestRepository.findAllByEmail(email);
+            }
+            if (email.isEmpty()) {
+                throw new RuntimeException("No service requests found for email: " + email);
+            }
+            return requests;
+        } catch (Exception e) {
+            System.err.println("Error fetching service requests for email: " + e.getMessage());
+            throw new RuntimeException("Error fetching service requests for email: " + email, e);
+        }
+    }
+
     public List<ServiceRequest> getServiceRequestsByEmail(String email) {
         try {
             List<ServiceRequest> requests = serviceRequestRepository.findAllByMechEmail(email);
@@ -53,11 +69,10 @@ public class ServiceRequestService {
         }
     }
 
-    public void updateServiceRequestStatus(int serviceId) {
+    public void updateServiceRequestStatus(int serviceId, boolean isDone) {
         try {
-            serviceRequestRepository.updateIsDoneById(serviceId,true);
+            serviceRequestRepository.updateIsDoneById(serviceId,isDone);
         } catch (Exception e) {
-            System.err.println("Error updating service request status: " + e.getMessage());
             throw new RuntimeException("Error updating service request status", e);
         }
     }

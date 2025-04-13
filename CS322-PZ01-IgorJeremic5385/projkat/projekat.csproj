@@ -79,12 +79,6 @@
   <ItemGroup>
     <Compile Include="classes\RegistrateUser.cs" />
     <Compile Include="classes\ServiceRequest.cs" />
-    <Compile Include="components\RequestMessageComponent.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="components\RequestMessageComponent.Designer.cs">
-      <DependentUpon>RequestMessageComponent.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

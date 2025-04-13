@@ -36,6 +36,7 @@
             this.roleLabel = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,14 +54,15 @@
             // 
             // servicePanel
             // 
-            this.servicePanel.Location = new System.Drawing.Point(3, 16);
+            this.servicePanel.Location = new System.Drawing.Point(3, 9);
             this.servicePanel.Name = "servicePanel";
-            this.servicePanel.Size = new System.Drawing.Size(679, 469);
+            this.servicePanel.Size = new System.Drawing.Size(679, 476);
             this.servicePanel.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.logoutButton);
             this.groupBox1.Controls.Add(this.usernameLabel);
             this.groupBox1.Controls.Add(this.roleLabel);
@@ -68,7 +70,7 @@
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 181);
+            this.groupBox1.Size = new System.Drawing.Size(173, 208);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
@@ -89,7 +91,7 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.usernameLabel.Location = new System.Drawing.Point(21, 59);
+            this.usernameLabel.Location = new System.Drawing.Point(16, 60);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(44, 16);
             this.usernameLabel.TabIndex = 4;
@@ -100,7 +102,7 @@
             this.roleLabel.AutoSize = true;
             this.roleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.roleLabel.Location = new System.Drawing.Point(57, 20);
+            this.roleLabel.Location = new System.Drawing.Point(47, 28);
             this.roleLabel.Name = "roleLabel";
             this.roleLabel.Size = new System.Drawing.Size(51, 20);
             this.roleLabel.TabIndex = 3;
@@ -130,6 +132,17 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DimGray;
+            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button3.Location = new System.Drawing.Point(0, 178);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(173, 30);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "admin panel";
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,5 +170,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel servicePanel;
+        private System.Windows.Forms.Button button3;
     }
 }

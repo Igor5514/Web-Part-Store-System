@@ -10,6 +10,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using projkat.classes;
+using System.Windows.Forms.VisualStyles;
 
 namespace projkat
 {
@@ -19,7 +20,7 @@ namespace projkat
         {
             InitializeComponent();
             InitializeDataGridView();
-            LoadAllRequests(User.GetInstance().Email);
+            LoadAllRequests(User.GetInstance().Email, User.GetInstance().Role);
         }
 
         private void InitializeDataGridView()
@@ -36,46 +37,100 @@ namespace projkat
             this.Columns.Add("ProblemType", "Problem Type");
             this.Columns.Add("ProblemDescription", "Problem Description");
 
-            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn
+            if (User.GetInstance().Role.ToLower().Equals("mechanic"))
             {
-                Name = "IsDone",
-                HeaderText = "Is Done",
-                Text = "Complete",
-                UseColumnTextForButtonValue = true
-            };
-            this.Columns.Add(buttonColumn);
+                DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn
+                {
+                    Name = "IsDone",
+                    HeaderText = "Is Done",
+                    UseColumnTextForButtonValue = false
+                };
+                this.Columns.Add(buttonColumn);
+            }
+            else
+            {
+                this.Columns.Add("isDone", "Is Completed");
+            }
 
             this.CellContentClick += new DataGridViewCellEventHandler(ServiceGridView_CellContentClick);
         }
 
         private void ServiceGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == this.Columns["IsDone"].Index)
-            {
-                MessageBox.Show("Task marked as completed!");
+            if (e.ColumnIndex == this.Columns["ProblemDescription"].Index) {
+                string cellText = this.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
+                MessageBox.Show(cellText);
             }
+
+            if (User.GetInstance().Role.ToLower().Equals("mechanic"))
+            {
+                if (e.ColumnIndex == this.Columns["IsDone"].Index)
+                {
+                    int serviceId;
+                    if (int.TryParse(this.Rows[e.RowIndex].Cells[0].Value?.ToString(), out serviceId))
+                    {
+                        updateServiceStatus(serviceId);
+                        if (this.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "Complete")
+                        {
+                            this.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Completed";
+                        }
+                        else
+                        {
+                            this.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Complete";
+                        }
+
+                    };
+                }
+            }
+            
         }
 
-        public async void LoadAllRequests(String email)
+        public async void updateServiceStatus(int serviceId)
         {
             using (HttpClient client = new HttpClient())
             {
                 try
                 {
-                    string jsonString = JsonSerializer.Serialize(email);
+                    string jsonString = JsonSerializer.Serialize(serviceId);
+                    StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                    HttpResponseMessage httpResponseMessage = await client.PostAsync("http://localhost:8080/services/updateServiceStatus", content);
+                    httpResponseMessage.EnsureSuccessStatusCode();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
+
+        public async void LoadAllRequests(String email, String role)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                try
+                {
+
+                    string jsonString = JsonSerializer.Serialize(email.Trim()+ " " + role.Trim());
                     StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
                     HttpResponseMessage httpResponseMessage = await client.PostAsync("http://localhost:8080/services/getServiceByEmail", content);
                     httpResponseMessage.EnsureSuccessStatusCode();
 
-                  
+
                     String responseData = await httpResponseMessage.Content.ReadAsStringAsync();
-                    List<ServiceRequest> serviceRequestList =  JsonSerializer.Deserialize<List<ServiceRequest>>(responseData, new JsonSerializerOptions { PropertyNameCaseInsensitive = true});
-                    for(int i = 0; i < serviceRequestList.Count; i++)
+                    List<ServiceRequest> serviceRequestList = JsonSerializer.Deserialize<List<ServiceRequest>>(responseData, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                    for (int i = 0; i < serviceRequestList.Count; i++)
                     {
                         ServiceRequest serviceRequest = serviceRequestList[i];
-                        this.Rows.Add(serviceRequest.ServiceId,serviceRequest.FullName, serviceRequest.Email, serviceRequest.ProblemType, serviceRequest.ProblemDescription);              
+                        if(User.GetInstance().Role.ToLower().Equals("mechanic")){
+                            this.Rows.Add(serviceRequest.ServiceId, serviceRequest.FullName, serviceRequest.Email, serviceRequest.ProblemType, serviceRequest.ProblemDescription, serviceRequest.IsDone ? "Completed" : "Complete");
+                        }
+                        else
+                        {
+                            this.Rows.Add(serviceRequest.ServiceId, serviceRequest.FullName, serviceRequest.Email, serviceRequest.ProblemType, serviceRequest.ProblemDescription, serviceRequest.IsDone ? "Completed" : "Not Completed");
+
+                        }
                     }
-                    
+
 
                 }
                 catch (Exception ex)
@@ -89,8 +144,5 @@ namespace projkat
         {
 
         }
-
-
-
     }
 }
