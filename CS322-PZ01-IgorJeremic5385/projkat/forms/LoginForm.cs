@@ -81,7 +81,7 @@ namespace projkat
                     return true;
                 }
             }
-            passwordErrorLabel.Text = "incorrent information";
+            passwordErrorLabel.Text = "incorrent email or password";
             return false;
         }
 

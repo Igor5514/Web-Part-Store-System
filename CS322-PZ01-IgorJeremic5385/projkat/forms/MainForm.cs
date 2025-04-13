@@ -37,15 +37,18 @@ namespace projkat
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ServiceGridView serviceGridView = new ServiceGridView();
-            serviceGridView.Dock = DockStyle.Fill;
-            servicePanel.Controls.Clear();
-            servicePanel.Controls.Add(serviceGridView);
+            if (User.GetInstance().Role == "mechanic")
+            {
+                ServiceGridView serviceGridView = new ServiceGridView();
+                serviceGridView.Dock = DockStyle.Fill;
+                servicePanel.Controls.Clear();
+                servicePanel.Controls.Add(serviceGridView);
+            }
+                
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
             RequestServiceComponent requestServiceComponent = new RequestServiceComponent();
             requestServiceComponent.Dock = DockStyle.Fill;
             servicePanel.Controls.Clear();

@@ -51,15 +51,14 @@ namespace projkat
             }
         }
 
-        public static void showPanel(Form form)
-        { 
+        private static void showPanel(Form form)
+        {
             panelContainer.Controls.Clear();
             form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
             form.Dock = DockStyle.Fill;
             panelContainer.Controls.Add(form);
             form.Show();
         }
-
-
     }
 }
