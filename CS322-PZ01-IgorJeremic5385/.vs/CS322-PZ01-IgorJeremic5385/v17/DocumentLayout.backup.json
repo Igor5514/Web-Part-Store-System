@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\it354 web sistemi 1\\projekat\\it354-pz01-igorjeremic5385\\cs322-pz01-igorjeremic5385\\projkat\\components\\servicegridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\components\\servicegridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\requestservicecomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\components\\requestservicecomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\requestservicecomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\components\\requestservicecomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\it354 web sistemi 1\\projekat\\it354-pz01-igorjeremic5385\\cs322-pz01-igorjeremic5385\\projkat\\components\\servicegridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\components\\servicegridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\servicegridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\components\\servicegridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\requestservicecomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\components\\requestservicecomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -93,11 +93,11 @@
         },
         {
           "DockedWidth": 317,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ServiceGridView.cs",
               "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\ServiceGridView.cs",
               "RelativeDocumentMoniker": "projkat\\components\\ServiceGridView.cs",
@@ -123,31 +123,17 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "RegistrateUser.cs",
-              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\classes\\RegistrateUser.cs",
-              "RelativeDocumentMoniker": "projkat\\classes\\RegistrateUser.cs",
-              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\classes\\RegistrateUser.cs",
-              "RelativeToolTip": "projkat\\classes\\RegistrateUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T12:27:53.546Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\MainForm.cs",
               "RelativeDocumentMoniker": "projkat\\forms\\MainForm.cs",
               "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\MainForm.cs [Design]",
               "RelativeToolTip": "projkat\\forms\\MainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T23:05:57.575Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-04-12T23:05:57.575Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainForm.cs",
               "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\MainForm.cs",
               "RelativeDocumentMoniker": "projkat\\forms\\MainForm.cs",
@@ -155,33 +141,43 @@
               "RelativeToolTip": "projkat\\forms\\MainForm.cs",
               "ViewState": "AgIAACAAAAAAAAAAAAAAADIAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T23:05:59.814Z",
+              "WhenOpened": "2025-04-12T23:05:59.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RequestServiceComponent.cs",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\RequestServiceComponent.cs",
+              "RelativeDocumentMoniker": "projkat\\components\\RequestServiceComponent.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\RequestServiceComponent.cs",
+              "RelativeToolTip": "projkat\\components\\RequestServiceComponent.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T23:04:02.126Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "RegistrateUser.cs",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\classes\\RegistrateUser.cs",
+              "RelativeDocumentMoniker": "projkat\\classes\\RegistrateUser.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\classes\\RegistrateUser.cs",
+              "RelativeToolTip": "projkat\\classes\\RegistrateUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T12:27:53.546Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "ServiceGridView.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\ServiceGridView.cs",
               "RelativeDocumentMoniker": "projkat\\components\\ServiceGridView.cs",
               "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\ServiceGridView.cs [Design]",
               "RelativeToolTip": "projkat\\components\\ServiceGridView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T15:31:32.677Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RequestServiceComponent.cs",
-              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\RequestServiceComponent.cs",
-              "RelativeDocumentMoniker": "projkat\\components\\RequestServiceComponent.cs",
-              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\RequestServiceComponent.cs",
-              "RelativeToolTip": "projkat\\components\\RequestServiceComponent.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAIEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T23:04:02.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T15:31:32.677Z"
             },
             {
               "$type": "Document",
@@ -251,8 +247,7 @@
               "RelativeToolTip": "projkat\\components\\ServiceGridView.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T16:13:38.394Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T16:13:38.394Z"
             },
             {
               "$type": "Document",
