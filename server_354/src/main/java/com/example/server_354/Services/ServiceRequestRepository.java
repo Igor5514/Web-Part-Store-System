@@ -39,4 +39,7 @@ public interface ServiceRequestRepository extends JpaRepository<ServiceRequest, 
     @Query(value = "SELECT is_done FROM service_request WHERE service_id = :serviceId", nativeQuery = true)
     boolean checkForIsDoneStatus(@Param("serviceId") int serviceId);
 
+    @Query(value = "SELECT email FROM user WHERE role = :role", nativeQuery = true)
+    List<String> getMechanicEmails(@Param("role") String role);
+
 }

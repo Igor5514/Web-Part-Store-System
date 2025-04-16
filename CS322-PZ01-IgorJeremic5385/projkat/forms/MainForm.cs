@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using projkat.components;
+using System;
 using System.Windows.Forms;
 
 namespace projkat
@@ -49,6 +43,17 @@ namespace projkat
             requestServiceComponent.Dock = DockStyle.Fill;
             servicePanel.Controls.Clear();
             servicePanel.Controls.Add(requestServiceComponent);
+        }
+
+        private void adminPanelButton_Click(object sender, EventArgs e)
+        {
+            if (User.GetInstance().Role.ToLower().Equals("admin"))
+            {
+                RoleManagementGridView roleManagementGridView = new RoleManagementGridView();
+                roleManagementGridView.Dock = DockStyle.Fill;
+                servicePanel.Controls.Clear();
+                servicePanel.Controls.Add(roleManagementGridView);
+            }
         }
     }
 }

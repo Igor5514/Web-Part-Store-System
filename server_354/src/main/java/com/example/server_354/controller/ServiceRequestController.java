@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.*;
 
 @CrossOrigin(origins = "http://localhost:5000")
 @RestController
@@ -22,12 +22,24 @@ public class ServiceRequestController {
     }
 
     @PostMapping("/createService")
-    public ResponseEntity<ServiceRequest> createServiceRequest(@RequestBody ServiceRequest serviceRequest) {
+    public ResponseEntity<String> createServiceRequest(@RequestBody ServiceRequest serviceRequest) {
         try {
-            ServiceRequest createdServiceRequest = serviceRequestService.createServiceRequest(serviceRequest);
-            return new ResponseEntity<>(createdServiceRequest, HttpStatus.OK);
+            serviceRequestService.createServiceRequest(serviceRequest);
+            return ResponseEntity.ok("request created successfully");
         } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Server error: " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/getMechEmails")
+    public ResponseEntity<?> getMechanicEmails() {
+        try {
+            List<String> mechanicEmails = serviceRequestService.getMechanicEmails();
+            return ResponseEntity.ok(mechanicEmails);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Server error: " + e.getMessage());
         }
     }
 

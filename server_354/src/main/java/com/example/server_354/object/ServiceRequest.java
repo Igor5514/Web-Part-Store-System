@@ -19,6 +19,8 @@ public class ServiceRequest {
     private boolean isDone;
 
     public ServiceRequest(String fullName, String email,String mechEmail, String problemType, String problemDescription, boolean isDone) {
+
+
         this.fullName = fullName;
         this.email = email;
         this.mechEmail = mechEmail;

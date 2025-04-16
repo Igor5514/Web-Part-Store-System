@@ -16,13 +16,18 @@ public class ServiceRequestService {
         this.serviceRequestRepository = serviceRequestRepository;
     }
 
+    public List<String> getMechanicEmails(){
+        return serviceRequestRepository.getMechanicEmails("mechanic");
+
+    }
+
     public boolean checkForIsDoneStatus(int serviceId){
         return serviceRequestRepository.checkForIsDoneStatus(serviceId);
     }
 
-    public ServiceRequest createServiceRequest(ServiceRequest serviceRequest) {
+    public void createServiceRequest(ServiceRequest serviceRequest) {
         try {
-            return serviceRequestRepository.save(serviceRequest);
+            serviceRequestRepository.save(serviceRequest);
         } catch (Exception e) {
             System.err.println("Error creating service request: " + e.getMessage());
             throw new RuntimeException("Error creating service request", e);

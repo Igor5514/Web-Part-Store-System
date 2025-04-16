@@ -2,6 +2,7 @@ package com.example.server_354.controller;
 
 import com.example.server_354.Services.UserService;
 import com.example.server_354.object.LoginRequest;
+import com.example.server_354.object.RequestedRoles;
 import com.example.server_354.object.RoleRequest;
 import com.example.server_354.object.User;
 import org.springframework.dao.DataAccessException;
@@ -81,6 +82,36 @@ public class UserController {
             return ResponseEntity.ok("user updated successfully");
         }else{
             return ResponseEntity.ok("failed to update user");
+        }
+    }
+
+    @PostMapping("/updateRole")
+    public ResponseEntity<String> updateRequestedRoleStatus(@RequestBody RoleRequest roleRequest){
+        String message;
+        try {
+            String role = roleRequest.getRole();
+            String email = roleRequest.getEmail();
+            userService.updateRequestedRoleStatus(role,email);
+            message = "role successfully updated";
+            return ResponseEntity.ok(message);
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            message = "update failed: "+ex.getMessage();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(message);
+        }
+    }
+
+    @GetMapping("/getRoleRequests")
+    public ResponseEntity<?> getAllRequestedRoles(){
+        try {
+            List<RequestedRoles> requestedRoles = userService.getAllRequestedRoles();
+            for(RequestedRoles requestedRole : requestedRoles){
+                System.out.println(requestedRole.getEmail());
+            }
+            return ResponseEntity.ok(requestedRoles);
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("get failed "+ ex.getMessage());
         }
     }
 

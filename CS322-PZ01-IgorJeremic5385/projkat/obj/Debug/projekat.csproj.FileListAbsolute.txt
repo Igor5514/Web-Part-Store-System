@@ -106,3 +106,4 @@ C:\Users\Igor.DESKTOP-GN4R0DJ\Desktop\fakultet\treca_godina\prvi_semestar\IT354 
 C:\Users\Igor.DESKTOP-GN4R0DJ\Desktop\fakultet\treca_godina\prvi_semestar\IT354 Web sistemi 1\projekat\IT354-PZ01-IgorJeremic5385\CS322-PZ01-IgorJeremic5385\projkat\obj\Debug\projekat.csproj.GenerateResource.cache
 C:\Users\Igor.DESKTOP-GN4R0DJ\Desktop\fakultet\treca_godina\prvi_semestar\IT354 Web sistemi 1\projekat\IT354-PZ01-IgorJeremic5385\CS322-PZ01-IgorJeremic5385\projkat\obj\Debug\projekat.csproj.CoreCompileInputs.cache
 C:\Users\Igor.DESKTOP-GN4R0DJ\Desktop\fakultet\treca_godina\prvi_semestar\IT354 Web sistemi 1\projekat\IT354-PZ01-IgorJeremic5385\CS322-PZ01-IgorJeremic5385\projkat\obj\Debug\projekat.csproj.Up2Date
+C:\Users\Igor.DESKTOP-GN4R0DJ\Desktop\fakultet\treca_godina\prvi_semestar\IT354 Web sistemi 1\projekat\IT354-PZ01-IgorJeremic5385\CS322-PZ01-IgorJeremic5385\projkat\obj\Debug\projkat.components.RoleManagementGridView.resources

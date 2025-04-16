@@ -1,5 +1,6 @@
 package com.example.server_354.Services;
 
+import com.example.server_354.object.RequestedRoles;
 import com.example.server_354.object.RoleRequest;
 import com.example.server_354.object.User;
 import jakarta.transaction.Transactional;
@@ -21,6 +22,14 @@ public class UserService {
 
     public void addUserRoleRequest(RoleRequest roleRequest){
         userRoleRequestRepository.save(roleRequest);
+    }
+
+    public void updateRequestedRoleStatus(String role,String email){
+        userRoleRequestRepository.updateRequestedRoleStatus(role,email);
+    }
+
+    public List<RequestedRoles> getAllRequestedRoles(){
+        return userRoleRequestRepository.getRequestedRolesWithUserNames();
     }
 
     public List<User> getAllUsers(){

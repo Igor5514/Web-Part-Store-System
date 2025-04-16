@@ -31,12 +31,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.servicePanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.adminPanelButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.roleLabel = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.adminPanelButton);
             this.groupBox1.Controls.Add(this.logoutButton);
             this.groupBox1.Controls.Add(this.usernameLabel);
             this.groupBox1.Controls.Add(this.roleLabel);
@@ -73,6 +73,18 @@
             this.groupBox1.Size = new System.Drawing.Size(173, 208);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // adminPanelButton
+            // 
+            this.adminPanelButton.BackColor = System.Drawing.Color.DimGray;
+            this.adminPanelButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.adminPanelButton.Location = new System.Drawing.Point(0, 178);
+            this.adminPanelButton.Name = "adminPanelButton";
+            this.adminPanelButton.Size = new System.Drawing.Size(173, 30);
+            this.adminPanelButton.TabIndex = 6;
+            this.adminPanelButton.Text = "admin panel";
+            this.adminPanelButton.UseVisualStyleBackColor = false;
+            this.adminPanelButton.Click += new System.EventHandler(this.adminPanelButton_Click);
             // 
             // logoutButton
             // 
@@ -132,17 +144,6 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DimGray;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(0, 178);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(173, 30);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "admin panel";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,6 +171,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel servicePanel;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button adminPanelButton;
     }
 }
