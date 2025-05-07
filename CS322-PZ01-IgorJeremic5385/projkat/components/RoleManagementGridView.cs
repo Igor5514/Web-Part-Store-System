@@ -62,9 +62,9 @@ namespace projkat.components
             if (e.ColumnIndex == this.Columns["AcceptRole"].Index)
             {
                 String email = this.Rows[e.RowIndex].Cells[2].Value?.ToString();
-                String role = this.Rows[e.RowIndex].Cells[2].Value?.ToString();
+                String role = this.Rows[e.RowIndex].Cells[3].Value?.ToString();
                 
-                RoleRequest roleRequest = new RoleRequest(email, role);
+                RoleRequest roleRequest = new RoleRequest(role, email);
                
                 updateRoleStatus(roleRequest);
                 if (this.Rows[e.RowIndex].Cells[e.ColumnIndex].ToString() == "Accept")
@@ -86,47 +86,43 @@ namespace projkat.components
 
         public async void updateRoleStatus(RoleRequest roleRequest)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                try
-                {
-                    string jsonString = JsonSerializer.Serialize(roleRequest);
-                    StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                    HttpResponseMessage httpResponseMessage = await client.PostAsync("http://localhost:8080/users/updateRole", content);
-                    httpResponseMessage.EnsureSuccessStatusCode();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                string jsonString = JsonSerializer.Serialize(roleRequest);
+                StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.PostAsync("http://localhost:8080/users/updateRole", content);
+                httpResponseMessage.EnsureSuccessStatusCode();
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         public async void loadRequestedRoles()
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                try
+                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.GetAsync("http://localhost:8080/users/getRoleRequests");
+                httpResponseMessage.EnsureSuccessStatusCode();
+
+                String jsonResponse = await httpResponseMessage.Content.ReadAsStringAsync();
+                List<RequestedRoles> requestedRolesList = JsonSerializer.Deserialize<List<RequestedRoles>>(jsonResponse);
+
+                for (int i = 0; i < requestedRolesList.Count; i++)
                 {
-                    HttpResponseMessage httpResponseMessage = await client.GetAsync("http://localhost:8080/users/getRoleRequests");
-                    httpResponseMessage.EnsureSuccessStatusCode();
-
-                    String jsonResponse = await httpResponseMessage.Content.ReadAsStringAsync();
-                    List<RequestedRoles> requestedRolesList = JsonSerializer.Deserialize<List<RequestedRoles>>(jsonResponse);
-
-                    for (int i = 0; i < requestedRolesList.Count; i++)
-                    {
-                        RequestedRoles requestedRole = requestedRolesList[i];
-                        Console.WriteLine(requestedRole.ToString());
-                        this.Rows.Add(requestedRole.roleId, requestedRole.fullName, requestedRole.email, requestedRole.role);
-                    }
-
+                    RequestedRoles requestedRole = requestedRolesList[i];
+                    Console.WriteLine(requestedRole.ToString());
+                    this.Rows.Add(requestedRole.roleId, requestedRole.fullName, requestedRole.email, requestedRole.role);
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
 
 

@@ -30,27 +30,25 @@ namespace projkat
 
         public async void loadMechanicEmails()
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                try
-                {
-                    HttpResponseMessage httpResponseMessage = await client.GetAsync("http://localhost:8080/services/getMechEmails");
-                    httpResponseMessage.EnsureSuccessStatusCode();
+                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.GetAsync("http://localhost:8080/services/getMechEmails");
+                httpResponseMessage.EnsureSuccessStatusCode();
 
-                    String jsonResponse = await httpResponseMessage.Content.ReadAsStringAsync();
-                    List<String> mechEmails = JsonSerializer.Deserialize<List<String>>(jsonResponse);
+                String jsonResponse = await httpResponseMessage.Content.ReadAsStringAsync();
+                List<String> mechEmails = JsonSerializer.Deserialize<List<String>>(jsonResponse);
                     
-                    for(int i = 0; i< mechEmails.Count; i++)
-                    {
-                        mechEmailComboBox.Items.Add(mechEmails[i]);
-                    }
-
-                }
-                catch (Exception ex)
+                for(int i = 0; i< mechEmails.Count; i++)
                 {
-                    Console.WriteLine(ex.Message);
+                    mechEmailComboBox.Items.Add(mechEmails[i]);
                 }
+
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+           
         }
 
         private void InitializeUI()
@@ -259,34 +257,32 @@ namespace projkat
 
         public async void insertRequestServiceToServer(ServiceRequest serviceRequest)
         {
-            using (HttpClient client = new HttpClient())
+            String responseData = "";
+            try
             {
-                String responseData = "";
-                try
+                var options = new JsonSerializerOptions
                 {
-                    var options = new JsonSerializerOptions
-                    {
-                        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
-                    };
-                    string jsonString = JsonSerializer.Serialize(serviceRequest, options);
-                    StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                    HttpResponseMessage httpResponseMessage = await client.PostAsync("http://localhost:8080/services/createService", content);
-                    httpResponseMessage.EnsureSuccessStatusCode();
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+                };
+                string jsonString = JsonSerializer.Serialize(serviceRequest, options);
+                StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.PostAsync("http://localhost:8080/services/createService", content);
+                httpResponseMessage.EnsureSuccessStatusCode();
 
-                    responseData = await httpResponseMessage.Content.ReadAsStringAsync();
-                    if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
-                    {
-                        serviceRequestResponseLabel.Text = responseData;
-                        serviceRequestResponseLabel.ForeColor = Color.Green;
-                    }
-                }
-                catch (Exception ex)
+                responseData = await httpResponseMessage.Content.ReadAsStringAsync();
+                if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
                 {
                     serviceRequestResponseLabel.Text = responseData;
-                    serviceRequestResponseLabel.ForeColor = Color.Red;
-                    Console.WriteLine(ex.Message);
+                    serviceRequestResponseLabel.ForeColor = Color.Green;
                 }
             }
+            catch (Exception ex)
+            {
+                serviceRequestResponseLabel.Text = responseData;
+                serviceRequestResponseLabel.ForeColor = Color.Red;
+                Console.WriteLine(ex.Message);
+            }
+            
         }
 
 

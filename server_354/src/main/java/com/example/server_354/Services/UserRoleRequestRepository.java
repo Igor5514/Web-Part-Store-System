@@ -19,6 +19,6 @@ public interface UserRoleRequestRepository extends JpaRepository<RoleRequest, Lo
 
     @Query(value = "SELECT rr.role_id, u.full_name, u.email, rr.role " +
             "FROM role_request rr " +
-            "INNER JOIN user u ON u.email = rr.email", nativeQuery = true)
+            "LEFT JOIN `user` u ON u.email = rr.email", nativeQuery = true)
     List<RequestedRoles> getRequestedRolesWithUserNames();
 }

@@ -15,6 +15,21 @@ namespace projkat
             this.FormBorderStyle = FormBorderStyle.None;
             this.ControlBox = false;
             initialisationMainForm();
+            addAdminPanelButton();
+        }
+
+        public void addAdminPanelButton()
+        {
+            Button adminPanelButton = new Button();
+            adminPanelButton.Size = new System.Drawing.Size(161,30);
+            adminPanelButton.ForeColor = System.Drawing.Color.White;
+            adminPanelButton.Text = "admin panel";
+            adminPanelButton.Click += adminPanelButton_Click;
+            if (User.GetInstance().Role.ToLower().Equals("admin"))
+            {
+                groupBox1.Controls.Add(adminPanelButton);
+                adminPanelButton.Location = new System.Drawing.Point(6, 215);
+            }
         }
 
         private void logoutButton_Click(object sender, EventArgs e)
@@ -49,11 +64,16 @@ namespace projkat
         {
             if (User.GetInstance().Role.ToLower().Equals("admin"))
             {
-                RoleManagementGridView roleManagementGridView = new RoleManagementGridView();
-                roleManagementGridView.Dock = DockStyle.Fill;
+                AdminPanelWrapperComponent adminPanelWrapperComponent = new AdminPanelWrapperComponent();
+                adminPanelWrapperComponent.Dock = DockStyle.Fill;
                 servicePanel.Controls.Clear();
-                servicePanel.Controls.Add(roleManagementGridView);
+                servicePanel.Controls.Add(adminPanelWrapperComponent);
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

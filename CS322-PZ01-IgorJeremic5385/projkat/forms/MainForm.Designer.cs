@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.servicePanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.adminPanelButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.roleLabel = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -54,45 +56,33 @@
             // 
             // servicePanel
             // 
-            this.servicePanel.Location = new System.Drawing.Point(3, 9);
+            this.servicePanel.Location = new System.Drawing.Point(6, 10);
             this.servicePanel.Name = "servicePanel";
-            this.servicePanel.Size = new System.Drawing.Size(679, 476);
+            this.servicePanel.Size = new System.Drawing.Size(676, 475);
             this.servicePanel.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.groupBox1.Controls.Add(this.adminPanelButton);
             this.groupBox1.Controls.Add(this.logoutButton);
             this.groupBox1.Controls.Add(this.usernameLabel);
             this.groupBox1.Controls.Add(this.roleLabel);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 32);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 208);
+            this.groupBox1.Size = new System.Drawing.Size(173, 249);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            // 
-            // adminPanelButton
-            // 
-            this.adminPanelButton.BackColor = System.Drawing.Color.DimGray;
-            this.adminPanelButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.adminPanelButton.Location = new System.Drawing.Point(0, 178);
-            this.adminPanelButton.Name = "adminPanelButton";
-            this.adminPanelButton.Size = new System.Drawing.Size(173, 30);
-            this.adminPanelButton.TabIndex = 6;
-            this.adminPanelButton.Text = "admin panel";
-            this.adminPanelButton.UseVisualStyleBackColor = false;
-            this.adminPanelButton.Click += new System.EventHandler(this.adminPanelButton_Click);
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // logoutButton
             // 
             this.logoutButton.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.logoutButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.logoutButton.Location = new System.Drawing.Point(0, 97);
+            this.logoutButton.Location = new System.Drawing.Point(6, 180);
             this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(173, 30);
+            this.logoutButton.Size = new System.Drawing.Size(161, 30);
             this.logoutButton.TabIndex = 5;
             this.logoutButton.Text = "log out";
             this.logoutButton.UseVisualStyleBackColor = false;
@@ -114,7 +104,7 @@
             this.roleLabel.AutoSize = true;
             this.roleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.roleLabel.Location = new System.Drawing.Point(47, 28);
+            this.roleLabel.Location = new System.Drawing.Point(43, 25);
             this.roleLabel.Name = "roleLabel";
             this.roleLabel.Size = new System.Drawing.Size(51, 20);
             this.roleLabel.TabIndex = 3;
@@ -124,9 +114,9 @@
             // 
             this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(0, 124);
+            this.button2.Location = new System.Drawing.Point(6, 144);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(173, 30);
+            this.button2.Size = new System.Drawing.Size(161, 30);
             this.button2.TabIndex = 2;
             this.button2.Text = "service list";
             this.button2.UseVisualStyleBackColor = false;
@@ -136,13 +126,23 @@
             // 
             this.button1.BackColor = System.Drawing.Color.DimGray;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(0, 151);
+            this.button1.Location = new System.Drawing.Point(6, 108);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(173, 30);
+            this.button1.Size = new System.Drawing.Size(161, 30);
             this.button1.TabIndex = 1;
             this.button1.Text = "request service";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
             // MainForm
             // 
@@ -171,6 +171,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel servicePanel;
-        private System.Windows.Forms.Button adminPanelButton;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }

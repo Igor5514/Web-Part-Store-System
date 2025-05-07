@@ -35,54 +35,50 @@ namespace projkat
 
         public async Task<Boolean> checkIfEmailExists(String email)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                try
+                var dict = new Dictionary<string, string>
                 {
-                    var dict = new Dictionary<string, string>
-                    {
-                        { "email", email }
-                    };
-                    string jsonString = JsonSerializer.Serialize(dict);
-                    StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                    HttpResponseMessage httpResponseMessage = await client.PostAsync("http://localhost:8080/users/getResByEmail", content);
-                    httpResponseMessage.EnsureSuccessStatusCode();
+                    { "email", email }
+                };
+                string jsonString = JsonSerializer.Serialize(dict);
+                StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.PostAsync("http://localhost:8080/users/getResByEmail", content);
+                httpResponseMessage.EnsureSuccessStatusCode();
 
-                    String responseData = await httpResponseMessage.Content.ReadAsStringAsync();
-                    Boolean response = JsonSerializer.Deserialize<Boolean>(responseData);
-                    return  response;
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                    return false;
-                }
+                String responseData = await httpResponseMessage.Content.ReadAsStringAsync();
+                Boolean response = JsonSerializer.Deserialize<Boolean>(responseData);
+                return  response;
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+            
         }
 
         public async Task<Boolean> registrateUser(RegistrateUser user)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                try
-                {
-                    String serialisedUser = JsonSerializer.Serialize(user);
-                    StringContent content = new StringContent(serialisedUser, Encoding.UTF8, "application/json");
-                    HttpResponseMessage httpResponseMessage = await client.PostAsync("http://localhost:8080/users/add", content);
-                    httpResponseMessage.EnsureSuccessStatusCode();
+                String serialisedUser = JsonSerializer.Serialize(user);
+                StringContent content = new StringContent(serialisedUser, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.PostAsync("http://localhost:8080/users/add", content);
+                httpResponseMessage.EnsureSuccessStatusCode();
 
-                    if(httpResponseMessage.StatusCode == HttpStatusCode.OK)
-                    {
-                        return true;
-                    }
-                    return false;
-                }
-                catch (Exception ex)
+                if(httpResponseMessage.StatusCode == HttpStatusCode.OK)
                 {
-                    Console.WriteLine(ex.Message);
-                    return false;
+                    return true;
                 }
+                return false;
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+            
         }
 
         public async Task<Boolean> validateRegistration()

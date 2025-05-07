@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projkat.classes;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -24,34 +25,33 @@ namespace projkat
         public async Task<Boolean> connectToServerForLogin(String jsonString)
         {
             Console.WriteLine("connteting to server");
-            using (HttpClient client = new HttpClient())
-            {
-                try
-                {
-                    StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                    HttpResponseMessage httpResponseMessage = await client.PostAsync("http://localhost:8080/users/getByEmail", content);
-                    httpResponseMessage.EnsureSuccessStatusCode();
 
-                    if(httpResponseMessage.StatusCode != HttpStatusCode.Unauthorized)
-                    {
-                        String responseData = await httpResponseMessage.Content.ReadAsStringAsync();
-                        User user = JsonSerializer.Deserialize<User>(responseData, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });             
-                        User.ResetInstance();
-                        User.SetInstance(user); 
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                    
+            try
+            {
+                StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.PostAsync("http://localhost:8080/users/getByEmail", content);
+                httpResponseMessage.EnsureSuccessStatusCode();
+
+                if(httpResponseMessage.StatusCode != HttpStatusCode.Unauthorized)
+                {
+                    String responseData = await httpResponseMessage.Content.ReadAsStringAsync();
+                    User user = JsonSerializer.Deserialize<User>(responseData, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });             
+                    User.ResetInstance();
+                    User.SetInstance(user); 
+                    return true;
                 }
-                catch (Exception ex) {
-                    Console.WriteLine(ex.Message);
+                else
+                {
                     return false;
                 }
+                    
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+                return false;
             }
         }
+        
 
         public async Task<Boolean> loginUser(String email, String password)
         {

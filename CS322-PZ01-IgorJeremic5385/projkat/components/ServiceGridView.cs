@@ -87,57 +87,52 @@ namespace projkat
 
         public async void updateServiceStatus(int serviceId)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                try
-                {
-                    string jsonString = JsonSerializer.Serialize(serviceId);
-                    StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                    HttpResponseMessage httpResponseMessage = await client.PostAsync("http://localhost:8080/services/updateServiceStatus", content);
-                    httpResponseMessage.EnsureSuccessStatusCode();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
+                string jsonString = JsonSerializer.Serialize(serviceId);
+                StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.PostAsync("http://localhost:8080/services/updateServiceStatus", content);
+                httpResponseMessage.EnsureSuccessStatusCode();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         public async void LoadAllRequests(String email, String role)
         {
-            using (HttpClient client = new HttpClient())
+            try
             {
-                try
+
+                string jsonString = JsonSerializer.Serialize(email.Trim()+ " " + role.Trim());
+                StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.PostAsync("http://localhost:8080/services/getServiceByEmail", content);
+                httpResponseMessage.EnsureSuccessStatusCode();
+
+
+                String responseData = await httpResponseMessage.Content.ReadAsStringAsync();
+                List<ServiceRequest> serviceRequestList = JsonSerializer.Deserialize<List<ServiceRequest>>(responseData, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+                for (int i = 0; i < serviceRequestList.Count; i++)
                 {
-
-                    string jsonString = JsonSerializer.Serialize(email.Trim()+ " " + role.Trim());
-                    StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
-                    HttpResponseMessage httpResponseMessage = await client.PostAsync("http://localhost:8080/services/getServiceByEmail", content);
-                    httpResponseMessage.EnsureSuccessStatusCode();
-
-
-                    String responseData = await httpResponseMessage.Content.ReadAsStringAsync();
-                    List<ServiceRequest> serviceRequestList = JsonSerializer.Deserialize<List<ServiceRequest>>(responseData, new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
-                    for (int i = 0; i < serviceRequestList.Count; i++)
-                    {
-                        ServiceRequest serviceRequest = serviceRequestList[i];
-                        if(User.GetInstance().Role.ToLower().Equals("mechanic")){
-                            this.Rows.Add(serviceRequest.ServiceId, serviceRequest.FullName, serviceRequest.Email, serviceRequest.ProblemType, serviceRequest.ProblemDescription, serviceRequest.IsDone ? "Completed" : "Complete");
-                        }
-                        else
-                        {
-                            this.Rows.Add(serviceRequest.ServiceId, serviceRequest.FullName, serviceRequest.Email, serviceRequest.ProblemType, serviceRequest.ProblemDescription, serviceRequest.IsDone ? "Completed" : "Not Completed");
-
-                        }
+                    ServiceRequest serviceRequest = serviceRequestList[i];
+                    if(User.GetInstance().Role.ToLower().Equals("mechanic")){
+                        this.Rows.Add(serviceRequest.ServiceId, serviceRequest.FullName, serviceRequest.Email, serviceRequest.ProblemType, serviceRequest.ProblemDescription, serviceRequest.IsDone ? "Completed" : "Complete");
                     }
+                    else
+                    {
+                        this.Rows.Add(serviceRequest.ServiceId, serviceRequest.FullName, serviceRequest.Email, serviceRequest.ProblemType, serviceRequest.ProblemDescription, serviceRequest.IsDone ? "Completed" : "Not Completed");
+
+                    }
+                }
 
 
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

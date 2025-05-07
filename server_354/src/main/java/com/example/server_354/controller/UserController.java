@@ -1,10 +1,7 @@
 package com.example.server_354.controller;
 
 import com.example.server_354.Services.UserService;
-import com.example.server_354.object.LoginRequest;
-import com.example.server_354.object.RequestedRoles;
-import com.example.server_354.object.RoleRequest;
-import com.example.server_354.object.User;
+import com.example.server_354.object.*;
 import org.springframework.dao.DataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -86,7 +83,7 @@ public class UserController {
     }
 
     @PostMapping("/updateRole")
-    public ResponseEntity<String> updateRequestedRoleStatus(@RequestBody RoleRequest roleRequest){
+    public ResponseEntity<String> updateRequestedRoleStatus(@RequestBody RequestRoleObject roleRequest){
         String message;
         try {
             String role = roleRequest.getRole();
