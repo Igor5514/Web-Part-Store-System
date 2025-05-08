@@ -12,15 +12,17 @@ namespace projkat.classes
         public string fullName { get; set; }
         public string email { get; set; }
         public string role { get; set; }
+        public Boolean isAccepted { get; set; }
 
         public RequestedRoles() { }
 
-        public RequestedRoles(int roleId, string fullName, string email, string role)
+        public RequestedRoles(int roleId, string fullName, string email, string role, bool isAccepted)
         {
             this.roleId = roleId;
             this.fullName = fullName;
             this.email = email;
             this.role = role;
+            this.isAccepted = isAccepted;
         }
     }
 }

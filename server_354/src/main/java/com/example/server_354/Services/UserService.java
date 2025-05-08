@@ -24,8 +24,7 @@ public class UserService {
         userRoleRequestRepository.save(roleRequest);
     }
 
-    public void updateRequestedRoleStatus(String role,String email){
-        System.out.println(role);
+    public void updateRequestedRoleStatus(String role,String email, boolean isAccepted){
         userRoleRequestRepository.updateRequestedRoleStatus(role,email);
     }
 

@@ -38,10 +38,9 @@ namespace projkat.components
      
             DataGridViewButtonColumn acceptButtonColumn = new DataGridViewButtonColumn
             {
-                Text = "Accept",
                 Name = "AcceptRole",
                 HeaderText = "Accept Role",
-                UseColumnTextForButtonValue = true
+                UseColumnTextForButtonValue = false
             };
             this.Columns.Add(acceptButtonColumn);
             DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn
@@ -63,8 +62,9 @@ namespace projkat.components
             {
                 String email = this.Rows[e.RowIndex].Cells[2].Value?.ToString();
                 String role = this.Rows[e.RowIndex].Cells[3].Value?.ToString();
+                Boolean isAccepted = this.Rows[e.RowIndex].Cells[4].Value?.ToString() == "Accepted";
                 
-                RoleRequest roleRequest = new RoleRequest(role, email);
+                RoleRequest roleRequest = new RoleRequest(role, email, isAccepted);
                
                 updateRoleStatus(roleRequest);
                 if (this.Rows[e.RowIndex].Cells[e.ColumnIndex].ToString() == "Accept")
@@ -83,6 +83,17 @@ namespace projkat.components
             }
         }
 
+        public async void deleteRoleRequest()
+
+        {
+            try
+            {
+
+            }
+            catch (Exception ex) { 
+                Console.WriteLine(ex.Message);
+            }
+        }
 
         public async void updateRoleStatus(RoleRequest roleRequest)
         {
@@ -113,8 +124,8 @@ namespace projkat.components
                 for (int i = 0; i < requestedRolesList.Count; i++)
                 {
                     RequestedRoles requestedRole = requestedRolesList[i];
-                    Console.WriteLine(requestedRole.ToString());
-                    this.Rows.Add(requestedRole.roleId, requestedRole.fullName, requestedRole.email, requestedRole.role);
+                    Console.WriteLine("aaa: "+requestedRole.isAccepted);
+                    this.Rows.Add(requestedRole.roleId, requestedRole.fullName, requestedRole.email, requestedRole.role, requestedRole.isAccepted ? "Accepted" : "Accept");
                 }
 
             }

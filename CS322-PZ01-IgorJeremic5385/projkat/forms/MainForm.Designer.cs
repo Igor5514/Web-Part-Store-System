@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.modifyAccount = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +65,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox1.Controls.Add(this.modifyAccount);
             this.groupBox1.Controls.Add(this.logoutButton);
             this.groupBox1.Controls.Add(this.usernameLabel);
             this.groupBox1.Controls.Add(this.roleLabel);
@@ -93,7 +95,7 @@
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.usernameLabel.Location = new System.Drawing.Point(16, 60);
+            this.usernameLabel.Location = new System.Drawing.Point(6, 45);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(44, 16);
             this.usernameLabel.TabIndex = 4;
@@ -104,7 +106,7 @@
             this.roleLabel.AutoSize = true;
             this.roleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.roleLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.roleLabel.Location = new System.Drawing.Point(43, 25);
+            this.roleLabel.Location = new System.Drawing.Point(59, 16);
             this.roleLabel.Name = "roleLabel";
             this.roleLabel.Size = new System.Drawing.Size(51, 20);
             this.roleLabel.TabIndex = 3;
@@ -144,6 +146,17 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
+            // modifyAccount
+            // 
+            this.modifyAccount.BackColor = System.Drawing.Color.Gray;
+            this.modifyAccount.ForeColor = System.Drawing.Color.White;
+            this.modifyAccount.Location = new System.Drawing.Point(6, 74);
+            this.modifyAccount.Name = "modifyAccount";
+            this.modifyAccount.Size = new System.Drawing.Size(161, 28);
+            this.modifyAccount.TabIndex = 6;
+            this.modifyAccount.Text = "modifyAccount";
+            this.modifyAccount.UseVisualStyleBackColor = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,5 +186,6 @@
         private System.Windows.Forms.Panel servicePanel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.Button modifyAccount;
     }
 }

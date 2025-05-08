@@ -17,7 +17,12 @@ public interface UserRoleRequestRepository extends JpaRepository<RoleRequest, Lo
     @Query(value = "UPDATE user SET role = :role WHERE email = :email " ,nativeQuery = true)
     void updateRequestedRoleStatus(@Param("role") String role, @Param("email") String email);
 
-    @Query(value = "SELECT rr.role_id, u.full_name, u.email, rr.role " +
+    @Transactional
+    @Modifying
+    @Query(value = "UPDATE user SET role = 'user' WHERE email = :email " ,nativeQuery = true)
+    void ReverseUpdateRequestedRoleStatus(@Param("email") String email);
+
+    @Query(value = "SELECT rr.role_id, u.full_name, u.email, rr.role, rr.accept " +
             "FROM role_request rr " +
             "LEFT JOIN `user` u ON u.email = rr.email", nativeQuery = true)
     List<RequestedRoles> getRequestedRolesWithUserNames();

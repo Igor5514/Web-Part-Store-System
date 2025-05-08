@@ -22,7 +22,7 @@ public class UserController {
     @PostMapping("/add")
     public ResponseEntity<Map<String,String>> addUser(@RequestBody User user){
         Map<String, String> response = new HashMap<>();
-        RoleRequest roleRequest = new RoleRequest(user.getRole(), user.getEmail());
+        RoleRequest roleRequest = new RoleRequest(user.getRole(), user.getEmail(), false);
         try{
             userService.addUserRoleRequest(roleRequest);
             user.setRole("user");
@@ -88,7 +88,9 @@ public class UserController {
         try {
             String role = roleRequest.getRole();
             String email = roleRequest.getEmail();
-            userService.updateRequestedRoleStatus(role,email);
+            boolean isAccepted = roleRequest.isAccepted();
+
+            userService.updateRequestedRoleStatus(role,email, isAccepted);
             message = "role successfully updated";
             return ResponseEntity.ok(message);
         }catch (Exception ex){
@@ -102,9 +104,6 @@ public class UserController {
     public ResponseEntity<?> getAllRequestedRoles(){
         try {
             List<RequestedRoles> requestedRoles = userService.getAllRequestedRoles();
-            for(RequestedRoles requestedRole : requestedRoles){
-                System.out.println(requestedRole.getEmail());
-            }
             return ResponseEntity.ok(requestedRoles);
         }catch (Exception ex){
             System.out.println(ex.getMessage());

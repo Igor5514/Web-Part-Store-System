@@ -24,9 +24,9 @@ namespace projkat.components
 
             MenuStrip menuStrip = new MenuStrip();
 
-            ToolStripMenuItem roleManagmentToolStripMenuItem = new ToolStripMenuItem();
-            ToolStripMenuItem userManagmentToolStripMenuItem = new ToolStripMenuItem();
-            ToolStripMenuItem vehicleManagmentToolStripMenuItem = new ToolStripMenuItem();
+            ToolStripMenuItem roleManagmentToolStripMenuItem = new ToolStripMenuItem("role managment");
+            ToolStripMenuItem userManagmentToolStripMenuItem = new ToolStripMenuItem("user managment");
+            ToolStripMenuItem vehicleManagmentToolStripMenuItem = new ToolStripMenuItem("vehicle managment");
 
             roleManagmentToolStripMenuItem.Click += roleManagmentItem_Click;
             userManagmentToolStripMenuItem.Click += userManagmentItem_Click;
@@ -41,7 +41,9 @@ namespace projkat.components
 
         private void roleManagmentItem_Click(object sender, EventArgs e)
         {
-
+            RoleManagementGridView roleManagementGridView = new RoleManagementGridView();
+            roleManagementGridView.Dock = DockStyle.Fill;
+            this.Controls.Add(roleManagementGridView);
         }
 
         private void userManagmentItem_Click(object sender, EventArgs e)

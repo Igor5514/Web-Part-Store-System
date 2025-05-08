@@ -12,13 +12,23 @@ public class RoleRequest {
     private int roleId = 0;
     private String role;
     private String email;
+    private boolean accept;
 
-    public RoleRequest(String role, String email) {
+    public RoleRequest(String role, String email, boolean accept) {
         this.role = role;
         this.email = email;
+        this.accept = accept;
     }
 
     public RoleRequest() {
+    }
+
+    public boolean isAccept() {
+        return accept;
+    }
+
+    public void setAccept(boolean accept) {
+        this.accept = accept;
     }
 
     public String getRole() {

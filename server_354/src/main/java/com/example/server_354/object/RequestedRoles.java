@@ -5,15 +5,25 @@ public class RequestedRoles {
     private String fullName;
     private String email;
     private String role;
+    private boolean isAccepted;
 
-    public RequestedRoles(int roleId, String fullName, String email, String role) {
+    public RequestedRoles(int roleId, String fullName, String email, String role, boolean isAccepted) {
         this.roleId = roleId;
         this.fullName = fullName;
         this.email = email;
         this.role = role;
+        this.isAccepted = isAccepted;
     }
 
     public RequestedRoles() {
+    }
+
+    public boolean getIsAccepted() {
+        return isAccepted;
+    }
+
+    public void setIsAccepted(boolean isAccepted) {
+        this.isAccepted = isAccepted;
     }
 
     public int getRoleId() {
