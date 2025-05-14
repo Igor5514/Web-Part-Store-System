@@ -10,15 +10,15 @@ namespace projkat.forms
     {
         public string role { get; set; }
         public string email { get; set; }
-        public Boolean isAccepted { get; set; }
+        public Boolean accepted { get; set; }
 
         public RoleRequest() { }
 
-        public RoleRequest(string role, string email, bool isAccepted)
+        public RoleRequest(string role, string email, bool accepted)
         {
             this.role = role;
             this.email = email;
-            this.isAccepted = isAccepted;
+            this.accepted = accepted;
         }
     }
 }

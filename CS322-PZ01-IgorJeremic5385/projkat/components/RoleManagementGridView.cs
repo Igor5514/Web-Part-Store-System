@@ -2,15 +2,11 @@
 using projkat.forms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
 using System.Net.Http;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net;
 
 namespace projkat.components
 {
@@ -62,12 +58,12 @@ namespace projkat.components
             {
                 String email = this.Rows[e.RowIndex].Cells[2].Value?.ToString();
                 String role = this.Rows[e.RowIndex].Cells[3].Value?.ToString();
-                Boolean isAccepted = this.Rows[e.RowIndex].Cells[4].Value?.ToString() == "Accepted";
-                
+                Boolean isAccepted = (this.Rows[e.RowIndex].Cells[4].Value?.ToString()).Equals("Accept");
+
                 RoleRequest roleRequest = new RoleRequest(role, email, isAccepted);
-               
+        
                 updateRoleStatus(roleRequest);
-                if (this.Rows[e.RowIndex].Cells[e.ColumnIndex].ToString() == "Accept")
+                if (isAccepted)
                 {
                     this.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Accepted";
                 }
@@ -79,16 +75,22 @@ namespace projkat.components
 
             if (e.ColumnIndex == this.Columns["DeleteRequest"].Index)
             {
-                
+                int roleId = 0;
+                int.TryParse(this.Rows[e.RowIndex].Cells[0].Value?.ToString(), out roleId);
+                deleteRoleRequest(roleId,e.RowIndex);
             }
         }
 
-        public async void deleteRoleRequest()
-
+        public async void deleteRoleRequest(int roleId, int rowIndex)
         {
             try
             {
-
+                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.DeleteAsync($"http://localhost:8080/users/deleteRole/{roleId}");
+                httpResponseMessage.EnsureSuccessStatusCode();
+                if(httpResponseMessage.StatusCode == HttpStatusCode.OK)
+                {
+                    this.Rows.RemoveAt(rowIndex);
+                }   
             }
             catch (Exception ex) { 
                 Console.WriteLine(ex.Message);

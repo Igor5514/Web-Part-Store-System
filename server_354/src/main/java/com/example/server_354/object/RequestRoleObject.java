@@ -4,23 +4,23 @@ public class RequestRoleObject {
 
     private String role;
     private String email;
-    private boolean isAccepted;
+    private boolean accepted;
 
-    public RequestRoleObject(String role, String email, boolean isAccepted) {
+    public RequestRoleObject(String role, String email, boolean accepted) {
         this.role = role;
         this.email = email;
-        this.isAccepted = isAccepted;
+        this.accepted = accepted;
     }
 
     public RequestRoleObject() {
     }
 
     public boolean isAccepted() {
-        return isAccepted;
+        return accepted;
     }
 
     public void setAccepted(boolean accepted) {
-        isAccepted = accepted;
+        this.accepted = accepted;
     }
 
     public String getRole() {

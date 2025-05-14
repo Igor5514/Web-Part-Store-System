@@ -90,6 +90,7 @@ public class UserController {
             String email = roleRequest.getEmail();
             boolean isAccepted = roleRequest.isAccepted();
 
+
             userService.updateRequestedRoleStatus(role,email, isAccepted);
             message = "role successfully updated";
             return ResponseEntity.ok(message);
@@ -108,6 +109,16 @@ public class UserController {
         }catch (Exception ex){
             System.out.println(ex.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("get failed "+ ex.getMessage());
+        }
+    }
+
+    @DeleteMapping("/deleteRole/{roleId}")
+    public ResponseEntity<?> deleteRoleRequest(@PathVariable Long roleId){
+        try {
+            userService.deleteRoleRequest(roleId);
+            return ResponseEntity.ok("deleted successfully");
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("failed to delete message: "+ e.getMessage());
         }
     }
 

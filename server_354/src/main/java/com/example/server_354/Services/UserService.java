@@ -25,11 +25,19 @@ public class UserService {
     }
 
     public void updateRequestedRoleStatus(String role,String email, boolean isAccepted){
-        userRoleRequestRepository.updateRequestedRoleStatus(role,email);
+        if(isAccepted){
+            userRoleRequestRepository.updateRequestedRoleStatus(role,email);
+        }else{
+            userRoleRequestRepository.ReverseUpdateRequestedRoleStatus(email);
+        }
     }
 
     public List<RequestedRoles> getAllRequestedRoles(){
         return userRoleRequestRepository.getRequestedRolesWithUserNames();
+    }
+
+    public void deleteRoleRequest(Long roleId){
+        userRoleRequestRepository.deleteById(roleId);
     }
 
     public List<User> getAllUsers(){
