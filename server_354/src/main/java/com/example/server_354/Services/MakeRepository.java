@@ -10,9 +10,6 @@ import java.util.List;
 
 public interface MakeRepository extends JpaRepository<Make, Long> {
 
-    @Query(value = "SELECT * FROM make", nativeQuery = true)
-    List<Make> getAllMakes();
-
     @Query(value = "SELECT make_id from make WHERE make = :make", nativeQuery = true)
     Integer getMakeIdByMake(@Param("make") String make);
 

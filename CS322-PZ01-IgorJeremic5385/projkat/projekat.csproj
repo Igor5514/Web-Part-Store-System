@@ -77,7 +77,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="classes\Engine.cs" />
+    <Compile Include="classes\Generation.cs" />
     <Compile Include="classes\HttpClientProvider.cs" />
+    <Compile Include="classes\Make.cs" />
+    <Compile Include="classes\ModelObject.cs" />
     <Compile Include="classes\RegistrateUser.cs" />
     <Compile Include="classes\RequestedRoles.cs" />
     <Compile Include="classes\ServiceRequest.cs" />
@@ -87,11 +91,23 @@
     <Compile Include="components\AdminPanelWrapperComponent.Designer.cs">
       <DependentUpon>AdminPanelWrapperComponent.cs</DependentUpon>
     </Compile>
+    <Compile Include="components\FilteredComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="components\FilteredComboBox.Designer.cs">
+      <DependentUpon>FilteredComboBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="components\RoleManagementGridView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="components\RoleManagementGridView.Designer.cs">
       <DependentUpon>RoleManagementGridView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="components\VehicleManagmentComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="components\VehicleManagmentComponent.Designer.cs">
+      <DependentUpon>VehicleManagmentComponent.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Form1.cs">
       <SubType>Form</SubType>
@@ -137,8 +153,14 @@
     <EmbeddedResource Include="components\AdminPanelWrapperComponent.resx">
       <DependentUpon>AdminPanelWrapperComponent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="components\FilteredComboBox.resx">
+      <DependentUpon>FilteredComboBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="components\RoleManagementGridView.resx">
       <DependentUpon>RoleManagementGridView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="components\VehicleManagmentComponent.resx">
+      <DependentUpon>VehicleManagmentComponent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

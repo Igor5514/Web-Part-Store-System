@@ -1,10 +1,9 @@
 package com.example.server_354.Services;
 
-import com.example.server_354.object.CarPartGroup;
-import com.example.server_354.object.CarPartType;
-import com.example.server_354.object.Make;
+import com.example.server_354.object.*;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -24,11 +23,6 @@ public class VehicleService {
         this.engineRepository = engineRepository;
         this.partGroupRepository = partGroupRepository;
         this.partTypeRepository = partTypeRepository;
-    }
-
-
-    public List<Make> getAllMakes(){
-        return makeRepository.getAllMakes();
     }
 
     public List<String> getModelByMakeId(int makeId){
@@ -56,8 +50,23 @@ public class VehicleService {
     }
 
     public int getGroupIdByGroupName(String groupName){
-        System.out.println(groupName);
         return partGroupRepository.getGroupIdByGroupName(groupName);
+    }
+
+    public List<Make> getEveryMake(){
+        return makeRepository.findAll();
+    }
+
+    public List<ModelObject> getEveryModel(){
+        return modelRepository.getModelObject();
+    }
+
+    public List<Generation> getEveryGeneration(){
+        return generationRepository.findAll();
+    }
+
+    public List<Engine> getEveryEngine(){
+        return engineRepository.findAll();
     }
 
     public List<CarPartType> getPartsTypeByGroupId(int groupId){

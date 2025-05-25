@@ -12,6 +12,7 @@ namespace projkat.classes
         public static readonly HttpClient Client = new HttpClient
         {
             Timeout = TimeSpan.FromSeconds(30) 
+
         };
     }
 }

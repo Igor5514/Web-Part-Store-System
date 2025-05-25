@@ -26,8 +26,7 @@ public class VehicleController {
     public ResponseEntity<?> getVehicleMake() {
         Map<String, String> errorResponse = new HashMap<>();
         try {
-            List<Make> makeList = vehicleService.getAllMakes();
-            return ResponseEntity.ok(makeList);
+            return ResponseEntity.ok(vehicleService.getEveryMake());
         } catch (DataAccessException e) {
             System.out.println(e.getMessage());
             errorResponse.put("error", "Internal server error: " + e.getMessage());
@@ -105,7 +104,6 @@ public class VehicleController {
         Map<String,String> response = new HashMap<>();
         String partGroupSub = substringIncomingString(partGroup);
         try{
-
             int groupId = vehicleService.getGroupIdByGroupName(partGroupSub);
             List<Part> list = new ArrayList<>();
             List<CarPartType> partsList = vehicleService.getPartsTypeByGroupId(groupId);
@@ -122,6 +120,38 @@ public class VehicleController {
         }
     }
 
+    @GetMapping("/getModelAll")
+    public ResponseEntity<?> getEveryModel(){
+        try {
+            return ResponseEntity.ok(vehicleService.getEveryModel());
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error loading model " +e.getMessage());
+        }
+    }
 
+    @GetMapping("/getGenerationAll")
+    public ResponseEntity<?> getEveryGeneration(){
+        try {
+            List<Generation> list = vehicleService.getEveryGeneration();
+            for (Generation o : list) {
+                System.out.println(o.getGeneration()+" "+o.getGeneration_id());
+            }
+            return ResponseEntity.ok(vehicleService.getEveryGeneration());
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error loading generation " +e.getMessage());
+        }
+    }
+
+    @GetMapping("/getEngineAll")
+    public ResponseEntity<?> getEveryEngine(){
+        try {
+            return ResponseEntity.ok(vehicleService.getEveryEngine());
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error loading engine " +e.getMessage());
+        }
+    }
 
 }

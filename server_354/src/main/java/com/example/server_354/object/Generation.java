@@ -9,8 +9,8 @@ import jakarta.persistence.Id;
 public class Generation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int generation_id;
-    private String generation;
+    public int generation_id;
+    public String generation;
 
     public Generation(int generation_id, String generation) {
         this.generation_id = generation_id;

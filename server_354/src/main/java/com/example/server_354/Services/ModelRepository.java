@@ -1,6 +1,7 @@
 package com.example.server_354.Services;
 
 import com.example.server_354.object.Model;
+import com.example.server_354.object.ModelObject;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -15,5 +16,7 @@ public interface ModelRepository extends JpaRepository<Model, Long> {
     @Query(value = "SELECT model_id from model WHERE model = :model", nativeQuery = true)
     Integer getModelIdByModel(@Param("model") String model);
 
+    @Query(value = "SELECT model_id, model FROM model", nativeQuery = true)
+    List<ModelObject> getModelObject();
 
 }

@@ -43,17 +43,21 @@ namespace projkat.components
         {
             RoleManagementGridView roleManagementGridView = new RoleManagementGridView();
             roleManagementGridView.Dock = DockStyle.Fill;
+            if (this.Controls.Count > 1) this.Controls.RemoveAt(1);
             this.Controls.Add(roleManagementGridView);
         }
 
         private void userManagmentItem_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void vehicleManagmentItem_Click(object sender, EventArgs e)
         {
-
+            VehicleManagmentComponent vehicleManagmentComponent = new VehicleManagmentComponent();
+            vehicleManagmentComponent.Dock = DockStyle.Fill;
+            if (this.Controls.Count > 1) this.Controls.RemoveAt(1);
+            this.Controls.Add(vehicleManagmentComponent);
         }
     }
 }
