@@ -7,6 +7,7 @@ using System.Text;
 using System.Text.Json;
 using System.Windows.Forms;
 using System.Net;
+using System.Drawing;
 
 namespace projkat.components
 {
@@ -26,6 +27,8 @@ namespace projkat.components
             this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.RowHeadersVisible = false;
             this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.BackgroundColor = Color.FromArgb(60, 60, 60);
+            this.ForeColor = Color.FromArgb(128, 255, 0);
 
             this.Columns.Add("id", "id");
             this.Columns.Add("FullName", "Full Name");

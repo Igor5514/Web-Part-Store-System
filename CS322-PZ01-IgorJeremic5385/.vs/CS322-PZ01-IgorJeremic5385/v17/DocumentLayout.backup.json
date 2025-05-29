@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\it354 web sistemi 1\\projekat\\it354-pz01-igorjeremic5385\\cs322-pz01-igorjeremic5385\\projkat\\components\\servicegridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\components\\servicegridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\it354 web sistemi 1\\projekat\\it354-pz01-igorjeremic5385\\cs322-pz01-igorjeremic5385\\projkat\\components\\rolemanagementgridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\components\\rolemanagementgridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\it354 web sistemi 1\\projekat\\it354-pz01-igorjeremic5385\\cs322-pz01-igorjeremic5385\\projkat\\components\\servicegridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\components\\servicegridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\it354 web sistemi 1\\projekat\\it354-pz01-igorjeremic5385\\cs322-pz01-igorjeremic5385\\projkat\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\forms\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\it354 web sistemi 1\\projekat\\it354-pz01-igorjeremic5385\\cs322-pz01-igorjeremic5385\\projkat\\components\\filteredcombobox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\components\\filteredcombobox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\it354 web sistemi 1\\projekat\\it354-pz01-igorjeremic5385\\cs322-pz01-igorjeremic5385\\projkat\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\forms\\loginform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|c:\\users\\igor.desktop-gn4r0dj\\desktop\\fakultet\\treca_godina\\prvi_semestar\\it354 web sistemi 1\\projekat\\it354-pz01-igorjeremic5385\\cs322-pz01-igorjeremic5385\\projkat\\forms\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|solutionrelative:projkat\\forms\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6007A31A-0CD3-4374-B2BB-27F0AD50324D}|projkat\\projekat.csproj|C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\classes\\httpclientprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -48,11 +64,62 @@
         },
         {
           "DockedWidth": 317,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ServiceGridView.cs",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\ServiceGridView.cs",
+              "RelativeDocumentMoniker": "projkat\\components\\ServiceGridView.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\ServiceGridView.cs",
+              "RelativeToolTip": "projkat\\components\\ServiceGridView.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAACEAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T22:27:35.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServiceGridView.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\ServiceGridView.cs",
+              "RelativeDocumentMoniker": "projkat\\components\\ServiceGridView.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\ServiceGridView.cs [Design]",
+              "RelativeToolTip": "projkat\\components\\ServiceGridView.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T22:27:34.571Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RoleManagementGridView.cs",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\RoleManagementGridView.cs",
+              "RelativeDocumentMoniker": "projkat\\components\\RoleManagementGridView.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\RoleManagementGridView.cs",
+              "RelativeToolTip": "projkat\\components\\RoleManagementGridView.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAAB0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T22:25:47.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\MainForm.cs",
+              "RelativeDocumentMoniker": "projkat\\forms\\MainForm.cs",
+              "ToolTip": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\MainForm.cs",
+              "RelativeToolTip": "projkat\\forms\\MainForm.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-29T22:20:59.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "RegistrationForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\RegistrationForm.cs",
               "RelativeDocumentMoniker": "projkat\\forms\\RegistrationForm.cs",
@@ -64,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "LoginForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\LoginForm.cs",
               "RelativeDocumentMoniker": "projkat\\forms\\LoginForm.cs",
@@ -76,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "FilteredComboBox.cs",
               "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\FilteredComboBox.cs",
               "RelativeDocumentMoniker": "projkat\\components\\FilteredComboBox.cs",
@@ -89,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "MainForm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\forms\\MainForm.cs",
               "RelativeDocumentMoniker": "projkat\\forms\\MainForm.cs",
@@ -101,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "HttpClientProvider.cs",
               "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\classes\\HttpClientProvider.cs",
               "RelativeDocumentMoniker": "projkat\\classes\\HttpClientProvider.cs",
@@ -109,12 +176,11 @@
               "RelativeToolTip": "projkat\\classes\\HttpClientProvider.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-25T21:14:21.213Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-25T21:14:21.213Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "VehicleManagmentComponent.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\VehicleManagmentComponent.cs",
               "RelativeDocumentMoniker": "projkat\\components\\VehicleManagmentComponent.cs",
@@ -125,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "VehicleManagmentComponent.cs",
               "DocumentMoniker": "C:\\Users\\Igor.DESKTOP-GN4R0DJ\\Desktop\\fakultet\\treca_godina\\prvi_semestar\\IT354 Web sistemi 1\\projekat\\IT354-PZ01-IgorJeremic5385\\CS322-PZ01-IgorJeremic5385\\projkat\\components\\VehicleManagmentComponent.cs",
               "RelativeDocumentMoniker": "projkat\\components\\VehicleManagmentComponent.cs",

@@ -1,5 +1,6 @@
 ﻿using projkat.components;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace projkat
@@ -22,7 +23,9 @@ namespace projkat
         {
             Button adminPanelButton = new Button();
             adminPanelButton.Size = new System.Drawing.Size(161,30);
-            adminPanelButton.ForeColor = System.Drawing.Color.White;
+            adminPanelButton.ForeColor = Color.FromArgb(128, 255, 0);
+            adminPanelButton.BackColor = Color.FromArgb(60, 60, 60);
+            adminPanelButton.FlatStyle = FlatStyle.Flat;
             adminPanelButton.Text = "admin panel";
             adminPanelButton.Click += adminPanelButton_Click;
             if (User.GetInstance().Role.ToLower().Equals("admin"))

@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using projkat.classes;
 using System.Windows.Forms.VisualStyles;
+using System.Drawing;
 
 namespace projkat
 {
@@ -30,6 +31,13 @@ namespace projkat
             this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.RowHeadersVisible = false;
             this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.DefaultCellStyle.BackColor = Color.FromArgb(40, 40, 40);
+            this.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(128, 255, 0);
+            this.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(30, 30, 30);
+            this.EnableHeadersVisualStyles = false;
+            this.BackgroundColor = Color.FromArgb(40, 40, 40);
+            this.ForeColor = Color.White ;
+            
 
             this.Columns.Add("id", "id");
             this.Columns.Add("FullName", "Full Name");
