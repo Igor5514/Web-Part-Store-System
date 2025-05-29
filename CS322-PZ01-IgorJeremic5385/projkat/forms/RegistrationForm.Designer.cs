@@ -52,7 +52,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.groupBox1.Controls.Add(this.roleErrorLabel);
             this.groupBox1.Controls.Add(this.phoneErrorLabel);
             this.groupBox1.Controls.Add(this.fullNameErrorLabel);
@@ -125,17 +125,22 @@
             // 
             // roleComboBox
             // 
-            this.roleComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roleComboBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.roleComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.roleComboBox.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.roleComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.roleComboBox.ForeColor = System.Drawing.Color.White;
             this.roleComboBox.FormattingEnabled = true;
             this.roleComboBox.Location = new System.Drawing.Point(115, 258);
             this.roleComboBox.Name = "roleComboBox";
-            this.roleComboBox.Size = new System.Drawing.Size(204, 23);
+            this.roleComboBox.Size = new System.Drawing.Size(204, 28);
             this.roleComboBox.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.label6.Location = new System.Drawing.Point(20, 259);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 18);
@@ -144,24 +149,31 @@
             // 
             // phoneTextBox
             // 
-            this.phoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.phoneTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.phoneTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoneTextBox.ForeColor = System.Drawing.Color.White;
             this.phoneTextBox.Location = new System.Drawing.Point(115, 217);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(204, 22);
+            this.phoneTextBox.Size = new System.Drawing.Size(204, 26);
             this.phoneTextBox.TabIndex = 10;
             // 
             // fullNameTextBox
             // 
-            this.fullNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.fullNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.fullNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fullNameTextBox.ForeColor = System.Drawing.Color.White;
             this.fullNameTextBox.Location = new System.Drawing.Point(115, 175);
             this.fullNameTextBox.Name = "fullNameTextBox";
-            this.fullNameTextBox.Size = new System.Drawing.Size(204, 22);
+            this.fullNameTextBox.Size = new System.Drawing.Size(204, 26);
             this.fullNameTextBox.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.label5.Location = new System.Drawing.Point(20, 217);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 18);
@@ -172,6 +184,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.label4.Location = new System.Drawing.Point(20, 176);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 18);
@@ -180,11 +193,13 @@
             // 
             // RegistrationButton
             // 
-            this.RegistrationButton.BackColor = System.Drawing.Color.Gray;
+            this.RegistrationButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.RegistrationButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RegistrationButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegistrationButton.Location = new System.Drawing.Point(84, 354);
+            this.RegistrationButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.RegistrationButton.Location = new System.Drawing.Point(103, 354);
             this.RegistrationButton.Name = "RegistrationButton";
-            this.RegistrationButton.Size = new System.Drawing.Size(184, 30);
+            this.RegistrationButton.Size = new System.Drawing.Size(153, 34);
             this.RegistrationButton.TabIndex = 6;
             this.RegistrationButton.Text = "Registration";
             this.RegistrationButton.UseVisualStyleBackColor = false;
@@ -192,11 +207,13 @@
             // 
             // loginButton
             // 
-            this.loginButton.BackColor = System.Drawing.Color.Gray;
+            this.loginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.loginButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(84, 307);
+            this.loginButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.loginButton.Location = new System.Drawing.Point(103, 314);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(184, 30);
+            this.loginButton.Size = new System.Drawing.Size(153, 34);
             this.loginButton.TabIndex = 5;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = false;
@@ -205,25 +222,30 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.label3.Location = new System.Drawing.Point(110, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 25);
+            this.label3.Size = new System.Drawing.Size(123, 26);
             this.label3.TabIndex = 1;
             this.label3.Text = "Registration";
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.passwordTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.ForeColor = System.Drawing.Color.White;
             this.passwordTextBox.Location = new System.Drawing.Point(115, 133);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(204, 22);
+            this.passwordTextBox.Size = new System.Drawing.Size(204, 26);
             this.passwordTextBox.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(20, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 18);
@@ -234,6 +256,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(20, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 18);
@@ -242,17 +265,20 @@
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.emailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.emailTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailTextBox.ForeColor = System.Drawing.Color.White;
             this.emailTextBox.Location = new System.Drawing.Point(115, 90);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(204, 22);
+            this.emailTextBox.Size = new System.Drawing.Size(204, 26);
             this.emailTextBox.TabIndex = 1;
             // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(884, 511);
             this.Controls.Add(this.groupBox1);
             this.Name = "RegistrationForm";

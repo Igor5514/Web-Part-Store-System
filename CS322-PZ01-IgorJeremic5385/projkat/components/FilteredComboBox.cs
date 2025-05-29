@@ -14,78 +14,112 @@ using System.Drawing;
 
 namespace projkat.components
 {
-    public partial class FilteredComboBox : GroupBox
+    public partial class FilteredComboBox<T> : GroupBox
     {
 
-        TextBox vehicleTextBox;
-        ListBox vehicleListBox;
+        TextBox vehicleTextBox = new TextBox();
+        ListBox vehicleListBox = new ListBox();
+        public List<T> attributesList;
         int textBoxLoactionX;
         int textBoxLoactionY;
+        string method;
+        string endpoint;
 
-        public FilteredComboBox(int textBoxLoactionX, int textBoxLoactionY)
+        public FilteredComboBox(int textBoxLoactionX, int textBoxLoactionY, string method, string endpoint)
         {
-            InitializeComponent();
             this.textBoxLoactionX = textBoxLoactionX;
             this.textBoxLoactionY = textBoxLoactionY;
-            intialiseFilteredComboBox();
+            this.method = method;
+            this.endpoint = endpoint;
+            initializeFilteredComboBox();
         }
 
-        public void intialiseFilteredComboBox()
+        public void initializeFilteredComboBox()
         {
-            vehicleTextBox = new TextBox();
-            vehicleTextBox.TextChanged += new EventHandler(engineTextBox_Change);
-            vehicleTextBox.Location = new Point(textBoxLoactionX, textBoxLoactionY);
+            this.Height = 20;
+
+            vehicleTextBox.TextChanged += new EventHandler(textBox_Change);
             vehicleTextBox.Size = new Size(200, 35);
-            int locationX = vehicleTextBox.Location.X;
-            int locationY = vehicleTextBox.Location.Y + 20;
-            vehicleListBox = new ListBox();
-            vehicleListBox.Location = new Point(locationX, locationY);
-            vehicleListBox.Size = new Size(200, 100);
 
+            this.Location = new Point(textBoxLoactionX, textBoxLoactionY);
             this.Controls.Add(vehicleTextBox);
+
+            vehicleListBox.SelectedIndexChanged += VehicleListBox_SelectedIndexChanged;
+
         }
 
-        private void engineTextBox_Change(object sender, EventArgs e)
+   
+
+        private void textBox_Change(object sender, EventArgs e)
         {
-            string vehicleListBoxText = vehicleListBox.Text;
+            Control parentControl = this.Parent;
+            int locationX = this.Location.X;
+            int locationY = this.Location.Y + 20;
+            vehicleListBox.Size = new Size(200, 100);
+            vehicleListBox.Location = new Point(locationX, locationY);
+            string vehicleListBoxText = vehicleTextBox.Text;
             if (vehicleListBoxText.Length > 0)
             {
-                this.Controls.Add(vehicleListBox);
-                getAllVehicleMake<Engine>("getEngineAll", vehicleListBox, "engine", vehicleListBoxText);
+                parentControl.Controls.Add(vehicleListBox);
+                vehicleListBox.BringToFront();
+                getAllVehicleMake(method, endpoint, vehicleListBoxText);
             }
             else
             {
                 vehicleListBox.Items.Clear();
-                this.Controls.Remove(vehicleListBox);
+                parentControl.Controls.Remove(vehicleListBox);
             }
 
         }
 
-        public async void getAllVehicleMake<T>(string methodType, ListBox listBox, String propName, String vehicleListBoxText)
+        private void VehicleListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Control parentControl = this.Parent;
+
+            if (vehicleListBox.SelectedItem != null)
+            {
+                string selectedItem = vehicleListBox.SelectedItem.ToString();
+                parentControl.Controls.Remove(vehicleListBox);
+                vehicleTextBox.Text = selectedItem;
+            }
+        }
+
+        public void populateAttributesList(string propName, string vehicleListBoxText)
+        {
+            vehicleListBox.Items.Clear();
+            for (int i = 0; i < attributesList.Count; i++)
+            {
+                string value = typeof(T).GetProperty(propName).GetValue(attributesList[i])?.ToString() ?? "";
+                if (value.Contains(vehicleListBoxText))
+                {
+                    vehicleListBox.Items.Add(value);
+                }
+            }
+        }
+
+        public async void getAllVehicleMake(string methodType, String propName, String vehicleListBoxText)
         {
             try
             {
-                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.GetAsync($"http://localhost:8080/vehicle/{methodType}");
-                httpResponseMessage.EnsureSuccessStatusCode();
-                String responseData = await httpResponseMessage.Content.ReadAsStringAsync();
-                List<T> makeList = JsonSerializer.Deserialize<List<T>>(responseData);
-                if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
-                {
-                    listBox.Items.Clear();
-                    for (int i = 0; i < makeList.Count; i++)
+                if (attributesList == null || attributesList.Count == 0) {
+                    HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.GetAsync($"http://localhost:8080/vehicle/{methodType}");
+                    httpResponseMessage.EnsureSuccessStatusCode();
+                    String responseData = await httpResponseMessage.Content.ReadAsStringAsync();
+                    attributesList = JsonSerializer.Deserialize<List<T>>(responseData);
+                    
+                    if (httpResponseMessage.StatusCode == HttpStatusCode.OK)
                     {
-                        string value = typeof(T).GetProperty(propName).GetValue(makeList[i])?.ToString() ?? "";
-                        if (value.Contains(vehicleListBoxText))
-                        {
-                            listBox.Items.Add(value);
-                        }
+                        populateAttributesList(propName, vehicleListBoxText);
+                    }
+                    else
+                    {
+                        Console.WriteLine(responseData);
                     }
                 }
                 else
                 {
-                    Console.WriteLine(responseData);
+                    populateAttributesList(propName, vehicleListBoxText);
                 }
-
             }
             catch (Exception ex)
             {
@@ -94,4 +128,5 @@ namespace projkat.components
         }
 
     }
+
 }

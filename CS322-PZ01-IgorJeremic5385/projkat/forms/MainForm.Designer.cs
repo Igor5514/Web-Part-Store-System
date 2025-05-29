@@ -32,6 +32,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.servicePanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.modifyAccount = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
             this.usernameLabel = new System.Windows.Forms.Label();
             this.roleLabel = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.modifyAccount = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,7 @@
             // 
             // servicePanel
             // 
+            this.servicePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.servicePanel.Location = new System.Drawing.Point(6, 10);
             this.servicePanel.Name = "servicePanel";
             this.servicePanel.Size = new System.Drawing.Size(676, 475);
@@ -64,7 +65,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.groupBox1.Controls.Add(this.modifyAccount);
             this.groupBox1.Controls.Add(this.logoutButton);
             this.groupBox1.Controls.Add(this.usernameLabel);
@@ -78,10 +79,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // modifyAccount
+            // 
+            this.modifyAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.modifyAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modifyAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.modifyAccount.Location = new System.Drawing.Point(6, 74);
+            this.modifyAccount.Name = "modifyAccount";
+            this.modifyAccount.Size = new System.Drawing.Size(161, 28);
+            this.modifyAccount.TabIndex = 6;
+            this.modifyAccount.Text = "modifyAccount";
+            this.modifyAccount.UseVisualStyleBackColor = false;
+            // 
             // logoutButton
             // 
-            this.logoutButton.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.logoutButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.logoutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.logoutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.logoutButton.Location = new System.Drawing.Point(6, 180);
             this.logoutButton.Name = "logoutButton";
             this.logoutButton.Size = new System.Drawing.Size(161, 30);
@@ -94,7 +108,7 @@
             // 
             this.usernameLabel.AutoSize = true;
             this.usernameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.usernameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.usernameLabel.Location = new System.Drawing.Point(6, 45);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(44, 16);
@@ -105,7 +119,7 @@
             // 
             this.roleLabel.AutoSize = true;
             this.roleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.roleLabel.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.roleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.roleLabel.Location = new System.Drawing.Point(59, 16);
             this.roleLabel.Name = "roleLabel";
             this.roleLabel.Size = new System.Drawing.Size(51, 20);
@@ -114,8 +128,9 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.button2.Location = new System.Drawing.Point(6, 144);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(161, 30);
@@ -126,8 +141,9 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
             this.button1.Location = new System.Drawing.Point(6, 108);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(161, 30);
@@ -146,22 +162,11 @@
             this.contextMenuStrip2.Name = "contextMenuStrip2";
             this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
             // 
-            // modifyAccount
-            // 
-            this.modifyAccount.BackColor = System.Drawing.Color.Gray;
-            this.modifyAccount.ForeColor = System.Drawing.Color.White;
-            this.modifyAccount.Location = new System.Drawing.Point(6, 74);
-            this.modifyAccount.Name = "modifyAccount";
-            this.modifyAccount.Size = new System.Drawing.Size(161, 28);
-            this.modifyAccount.TabIndex = 6;
-            this.modifyAccount.Text = "modifyAccount";
-            this.modifyAccount.UseVisualStyleBackColor = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(898, 515);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
