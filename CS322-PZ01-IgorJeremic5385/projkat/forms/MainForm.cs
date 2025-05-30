@@ -69,6 +69,7 @@ namespace projkat
             {
                 AdminPanelWrapperComponent adminPanelWrapperComponent = new AdminPanelWrapperComponent();
                 adminPanelWrapperComponent.Dock = DockStyle.Fill;
+                
                 servicePanel.Controls.Clear();
                 servicePanel.Controls.Add(adminPanelWrapperComponent);
             }

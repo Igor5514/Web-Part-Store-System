@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,7 @@ namespace projkat.components
         public AdminPanelWrapperComponent()
         {
             InitializeComponent();
+            adminPanelWrapperGUI();
             addMenuStripToAdminPanel();
 
         }
@@ -32,11 +34,23 @@ namespace projkat.components
             userManagmentToolStripMenuItem.Click += userManagmentItem_Click;
             vehicleManagmentToolStripMenuItem.Click += vehicleManagmentItem_Click;
 
+            menuStrip.BackColor = Color.FromArgb(30,30,30);
+            
+            menuStrip.ForeColor = Color.FromArgb(128, 255, 0);
+            roleManagmentToolStripMenuItem.BackColor = Color.FromArgb(40,40,40);
+            userManagmentToolStripMenuItem.BackColor = Color.FromArgb(40, 40, 40);
+            vehicleManagmentToolStripMenuItem.BackColor = Color.FromArgb(40, 40, 40);
+
             menuStrip.Items.Add(roleManagmentToolStripMenuItem);
             menuStrip.Items.Add(userManagmentToolStripMenuItem);
             menuStrip.Items.Add(vehicleManagmentToolStripMenuItem);
 
             this.Controls.Add(menuStrip);
+        }
+
+        public void adminPanelWrapperGUI()
+        {
+            
         }
 
         private void roleManagmentItem_Click(object sender, EventArgs e)

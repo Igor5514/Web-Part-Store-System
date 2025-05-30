@@ -58,6 +58,8 @@
             // servicePanel
             // 
             this.servicePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.servicePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.servicePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.servicePanel.Location = new System.Drawing.Point(6, 10);
             this.servicePanel.Name = "servicePanel";
             this.servicePanel.Size = new System.Drawing.Size(676, 475);
@@ -66,6 +68,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBox1.Controls.Add(this.modifyAccount);
             this.groupBox1.Controls.Add(this.logoutButton);
             this.groupBox1.Controls.Add(this.usernameLabel);

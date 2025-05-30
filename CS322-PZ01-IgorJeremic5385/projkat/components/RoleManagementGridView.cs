@@ -27,7 +27,7 @@ namespace projkat.components
             this.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.RowHeadersVisible = false;
             this.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.BackgroundColor = Color.FromArgb(60, 60, 60);
+            this.BackgroundColor = Color.FromArgb(40,40,40);
             this.ForeColor = Color.FromArgb(128, 255, 0);
 
             this.Columns.Add("id", "id");
@@ -40,7 +40,11 @@ namespace projkat.components
                 Name = "AcceptRole",
                 HeaderText = "Accept Role",
                 UseColumnTextForButtonValue = false
+               
             };
+            acceptButtonColumn.DefaultCellStyle.BackColor = Color.FromArgb(50, 50, 50);
+            acceptButtonColumn.FlatStyle = FlatStyle.Flat;
+
             this.Columns.Add(acceptButtonColumn);
             DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn
             {
@@ -49,6 +53,9 @@ namespace projkat.components
                 HeaderText = "Delete Request",
                 UseColumnTextForButtonValue = true
             };
+            deleteButtonColumn.DefaultCellStyle.BackColor = Color.FromArgb(50, 50, 50);
+            deleteButtonColumn .FlatStyle = FlatStyle.Flat;
+
             this.Columns.Add(deleteButtonColumn);
 
             this.CellContentClick += new DataGridViewCellEventHandler(ServiceGridView_CellContentClick);

@@ -38,16 +38,17 @@ namespace projkat.components
 
         public void intialiseVehicleManagmentGUI()
         {
+
             Label makeLabel = new Label();
             makeLabel.Text = "Vehicle Make: ";
-            makeLabel.ForeColor = Color.White;
+            makeLabel.ForeColor = Color.FromArgb(128, 255, 0);
             makeLabel.Location = new Point(80,75);
 
             filteredMakeComboBox = new FilteredComboBox<Make>(190, 70, "getMake", "make");
 
             Label modelLabel = new Label();
             modelLabel.Text = "Vehicle Model: ";
-            modelLabel.ForeColor = Color.White;
+            modelLabel.ForeColor = Color.FromArgb(128, 255, 0);
             modelLabel.Location = new Point(80, 115);
 
             filteredModelComboBox = new FilteredComboBox<ModelObject>(190, 110, "getModelAll", "model");
@@ -55,14 +56,14 @@ namespace projkat.components
 
             Label generationLabel = new Label();
             generationLabel.Text = "Vehicle Generation: ";
-            generationLabel.ForeColor = Color.White;
+            generationLabel.ForeColor = Color.FromArgb(128, 255, 0);
             generationLabel.Location = new Point(80, 155);
 
             filteredGenerationComboBox = new FilteredComboBox<Generation>(190, 150, "getGenerationAll", "generation");
 
             Label engineLabel = new Label();
             engineLabel.Text = "Vehicle Engine: ";
-            engineLabel.ForeColor = Color.White;
+            engineLabel.ForeColor = Color.FromArgb(128, 255, 0);
             engineLabel.Location = new Point(80, 195);
 
             filteredEngineComboBox = new FilteredComboBox<Engine>(190, 190, "getEngineAll", "engine");

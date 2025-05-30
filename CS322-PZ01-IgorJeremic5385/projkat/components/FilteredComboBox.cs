@@ -36,10 +36,14 @@ namespace projkat.components
 
         public void initializeFilteredComboBox()
         {
-            this.Height = 20;
+            this.Height = 25;
 
             vehicleTextBox.TextChanged += new EventHandler(textBox_Change);
-            vehicleTextBox.Size = new Size(200, 35);
+            vehicleTextBox.Size = new Size(220, 25);
+            vehicleTextBox.ForeColor = Color.White;
+            vehicleTextBox.BackColor = Color.FromArgb(102, 102, 102);
+            vehicleTextBox.BorderStyle = BorderStyle.FixedSingle;
+            vehicleTextBox.Font = new Font("Microsoft Sans Serif", 12);
 
             this.Location = new Point(textBoxLoactionX, textBoxLoactionY);
             this.Controls.Add(vehicleTextBox);
