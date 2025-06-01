@@ -73,7 +73,7 @@ namespace projkat
             Label fullNameLabel = new Label
             {
                 Text = "Full Name:",
-                ForeColor = System.Drawing.Color.White,
+                ForeColor = System.Drawing.Color.FromArgb(128, 255, 0),
                 Location = new System.Drawing.Point(10, 30),
                 Size = new System.Drawing.Size(100, 30)
             };
@@ -83,7 +83,10 @@ namespace projkat
             {
                 Name = "fullNameTextBox",
                 Location = new System.Drawing.Point(130, 30),
-                Size = new System.Drawing.Size(250, 20)
+                Size = new System.Drawing.Size(250, 20),
+                BackColor = Color.FromArgb(102, 102, 102),
+                BorderStyle = BorderStyle.FixedSingle,
+                ForeColor = Color.White
             };
             groupBox.Controls.Add(fullNameTextBox);
 
@@ -98,7 +101,7 @@ namespace projkat
             Label mechEmailLabel = new Label
             {
                 Text = "Mech Email:",
-                ForeColor = System.Drawing.Color.White,
+                ForeColor = System.Drawing.Color.FromArgb(128, 255, 0),
                 Location = new System.Drawing.Point(10, 70),
                 Size = new System.Drawing.Size(100, 30)
             };
@@ -108,7 +111,10 @@ namespace projkat
             {
                 Name = "mechEmailComboBox",
                 Location = new System.Drawing.Point(130, 70),
-                Size = new System.Drawing.Size(250, 20)
+                Size = new System.Drawing.Size(250, 20),
+                BackColor = Color.FromArgb(102, 102, 102),
+                FlatStyle = FlatStyle.Flat,
+                ForeColor = Color.White
             };
             groupBox.Controls.Add(mechEmailComboBox);
 
@@ -123,7 +129,7 @@ namespace projkat
             Label problemTypeLabel = new Label
             {
                 Text = "Problem Type:",
-                ForeColor = System.Drawing.Color.White,
+                ForeColor = System.Drawing.Color.FromArgb(128, 255, 0),
                 Location = new System.Drawing.Point(10, 110),
                 Size = new System.Drawing.Size(100, 30)
             };
@@ -133,7 +139,10 @@ namespace projkat
             {
                 Name = "problemTypeTextBox",
                 Location = new System.Drawing.Point(130, 110),
-                Size = new System.Drawing.Size(250, 20)
+                Size = new System.Drawing.Size(250, 20),
+                BackColor = Color.FromArgb(102, 102, 102),
+                BorderStyle = BorderStyle.FixedSingle,
+                ForeColor = Color.White
             };
             groupBox.Controls.Add(problemTypeTextBox);
 
@@ -148,7 +157,7 @@ namespace projkat
             Label problemDescriptionLabel = new Label
             {
                 Text = "Problem Description:",
-                ForeColor = System.Drawing.Color.White,
+                ForeColor = System.Drawing.Color.FromArgb(128, 255, 0),
                 Location = new System.Drawing.Point(10, 150),
                 Size = new System.Drawing.Size(120, 30)
             };
@@ -159,7 +168,10 @@ namespace projkat
                 Name = "problemDescriptionTextBox",
                 Location = new System.Drawing.Point(130, 150),
                 Multiline = true,
-                Size = new System.Drawing.Size(250, 50)
+                Size = new System.Drawing.Size(250, 50),
+                BackColor = Color.FromArgb(102, 102, 102),
+                BorderStyle = BorderStyle.FixedSingle,
+                ForeColor = Color.White
             };
             groupBox.Controls.Add(problemDescriptionTextBox);
 
@@ -182,10 +194,11 @@ namespace projkat
             Button submitButton = new Button {
                 Name = "submitButton",
                 Text = "submit",
-                Size = new System.Drawing.Size(70, 25),
-                Location = new System.Drawing.Point(310, 220),
-                ForeColor = System.Drawing.Color.White,
-
+                Size = new Size(90, 30),
+                Location = new Point(290, 210),
+                ForeColor = Color.FromArgb(128, 255, 0),
+                BackColor = Color.FromArgb(60, 60, 60),
+                FlatStyle = FlatStyle.Flat,
             };
             submitButton.Click += submitButton_Click;
             groupBox.Controls.Add(submitButton);

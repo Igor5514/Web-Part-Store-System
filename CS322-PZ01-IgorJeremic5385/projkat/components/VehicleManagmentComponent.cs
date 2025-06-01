@@ -16,11 +16,14 @@ namespace projkat.components
 {
     public partial class VehicleManagmentComponent : GroupBox
     {
-
         FilteredComboBox<Make> filteredMakeComboBox;
         FilteredComboBox<ModelObject> filteredModelComboBox;
         FilteredComboBox<Generation> filteredGenerationComboBox;
         FilteredComboBox<Engine> filteredEngineComboBox;
+        Boolean makeExist = false;
+        Boolean modelExist = false;
+        Boolean generationExist = false;
+        Boolean engineExist = false;
 
         public VehicleManagmentComponent()
         {
@@ -67,7 +70,16 @@ namespace projkat.components
             engineLabel.Location = new Point(80, 195);
 
             filteredEngineComboBox = new FilteredComboBox<Engine>(190, 190, "getEngineAll", "engine");
-           
+
+            Button addNewVehicleButton = new Button();
+            addNewVehicleButton.Text = "add new vehicle";
+            addNewVehicleButton.ForeColor = Color.FromArgb(128, 255, 0);
+            addNewVehicleButton.BackColor = Color.FromArgb(60, 60, 60);
+            addNewVehicleButton.Location = new Point(295, 235);
+            addNewVehicleButton.Size = new Size(130, 30);
+            addNewVehicleButton.FlatStyle = FlatStyle.Flat;
+            addNewVehicleButton.Click += new EventHandler(addNewVehicleButton_Click);
+
             this.Controls.Add(makeLabel);
             this.Controls.Add(filteredMakeComboBox);
             this.Controls.Add(modelLabel);
@@ -76,10 +88,14 @@ namespace projkat.components
             this.Controls.Add(filteredGenerationComboBox);
             this.Controls.Add(engineLabel);
             this.Controls.Add(filteredEngineComboBox);
-
+            this.Controls.Add(addNewVehicleButton);
 
         }
   
+        private void addNewVehicleButton_Click(object sender, EventArgs e)
+        {
+
+        }
 
     }
 }
