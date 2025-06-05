@@ -85,6 +85,7 @@
     <Compile Include="classes\RegistrateUser.cs" />
     <Compile Include="classes\RequestedRoles.cs" />
     <Compile Include="classes\ServiceRequest.cs" />
+    <Compile Include="classes\VehicleComponent.cs" />
     <Compile Include="components\AdminPanelWrapperComponent.cs">
       <SubType>Component</SubType>
     </Compile>

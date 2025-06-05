@@ -142,7 +142,7 @@ namespace projkat.components
             }
         }
 
-        public async Task<bool> checkIfPropertyExist(string propType, string method, string prop)
+        public async Task<bool> checkIfPropertyExist(string method, string prop)
         {
             try
             {
@@ -154,13 +154,20 @@ namespace projkat.components
                 Boolean response = JsonSerializer.Deserialize<Boolean>(responseData);
                 return response;
             }
-            catch (Exception ex) { 
+            catch (Exception ex)
+            {
                 Console.WriteLine(ex.Message);
-                return false;
+                return true;
             }
-            
+        }
+        
+        public String getProperty()
+        {
+            return vehicleTextBox.Text;
         }
 
     }
+
+
 
 }

@@ -19,4 +19,7 @@ public interface ModelRepository extends JpaRepository<Model, Long> {
     @Query(value = "SELECT model_id, model FROM model", nativeQuery = true)
     List<ModelObject> getModelObject();
 
+    @Query(value = "SELECT exists(select 1 from model where model.model = :model)", nativeQuery = true)
+    Long checkIfModelExist(@Param("model") String model);
+
 }

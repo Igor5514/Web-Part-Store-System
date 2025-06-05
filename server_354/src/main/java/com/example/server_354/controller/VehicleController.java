@@ -154,4 +154,71 @@ public class VehicleController {
         }
     }
 
+    @PostMapping("/makeExist")
+    public ResponseEntity<?> checkIfMakeExist(@RequestBody String make){
+        try {
+            String makeString = substringIncomingString(make);
+            return ResponseEntity.ok(vehicleService.checkIfMakeExist(makeString));
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error while checking make "+ex.getMessage());
+        }
+    }
+
+    @PostMapping("/modelExist")
+    public ResponseEntity<?> checkIfModelExist(@RequestBody String model){
+        try {
+            String modelString = substringIncomingString(model);
+            return ResponseEntity.ok(vehicleService.checkIfModelExist(modelString));
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error while checking model "+ex.getMessage());
+        }
+    }
+
+    @PostMapping("/generationExist")
+    public ResponseEntity<?> checkIfGenerationExist(@RequestBody String generation){
+        try {
+            String generationString = substringIncomingString(generation);
+            return ResponseEntity.ok(vehicleService.checkIfGenerationExist(generationString));
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error while checking generation "+ex.getMessage());
+        }
+    }
+
+    @PostMapping("/engineExist")
+    public ResponseEntity<?> checkIfEngineExist(@RequestBody String engine){
+        try {
+            String generationString = substringIncomingString(engine);
+            return ResponseEntity.ok(vehicleService.checkIfEngineExists(generationString));
+        }catch (Exception ex){
+            System.out.println(ex.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error while checking engine "+ex.getMessage());
+        }
+    }
+
+    @PostMapping("postVehicle")
+    public ResponseEntity<?> postVehicleComponent(@RequestBody VehicleComponent vehicleComponent){
+        try {
+            switch (vehicleComponent.getVehicleComponentType()){
+                case "make":
+                    vehicleService.addVehicleMake(vehicleComponent.getVehicleComponentValue());
+                    break;
+                case "model":
+                    vehicleService.addVehicleModel(vehicleComponent.getVehicleComponentValue());
+                    break;
+                case "generation":
+                    vehicleService.addVehicleGeneration(vehicleComponent.getVehicleComponentValue());
+                    break;
+                case "engine":
+                    vehicleService.addVehicleEngine(vehicleComponent.getVehicleComponentValue());
+                    break;
+            }
+            return ResponseEntity.ok().body(vehicleComponent.getVehicleComponentType() + " successfuly updated");
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error while posting "+ vehicleComponent.getVehicleComponentType() + e.getMessage());
+        }
+    }
+
 }

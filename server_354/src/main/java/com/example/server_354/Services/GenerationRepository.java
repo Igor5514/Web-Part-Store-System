@@ -16,5 +16,7 @@ public interface GenerationRepository extends JpaRepository<Generation, Long> {
                    "WHERE model = :model", nativeQuery = true)
     List<String> getGenerationByModelId(@Param("model") String model);
 
+    @Query(value = "SELECT exists(select 1 from generation where generation.generation = :generation)", nativeQuery = true)
+    Long checkIfGenerationExist(@Param("generation") String generation);
 }
 

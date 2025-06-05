@@ -73,4 +73,31 @@ public class VehicleService {
         return partTypeRepository.getPartsTypeByGroupName(groupId);
     }
 
+    public Boolean checkIfMakeExist(String make){
+        return makeRepository.checkIfMakeExist(make) == 1;
+    }
+
+    public Boolean checkIfModelExist(String model){
+        return modelRepository.checkIfModelExist(model) == 1 ? true : false;
+    }
+
+    public Boolean checkIfGenerationExist(String generation){
+        return generationRepository.checkIfGenerationExist(generation) == 1 ? true : false;
+    }
+
+    public Boolean checkIfEngineExists(String engine){
+        return engineRepository.checkIfEngineExist(engine) == 1 ? true : false;
+    }
+
+    public void addVehicleMake(String vehicleComponentValue) {
+    }
+
+    public void addVehicleModel(String vehicleComponentValue) {
+    }
+
+    public void addVehicleGeneration(String vehicleComponentValue) {
+    }
+
+    public void addVehicleEngine(String vehicleComponentValue) {
+    }
 }

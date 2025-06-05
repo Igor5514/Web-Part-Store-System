@@ -17,4 +17,7 @@ public interface EngineRepository extends JpaRepository<Engine, Long> {
                    "WHERE model = :model and generation = :generation", nativeQuery = true)
     List<String> getEngineByModelAndGeneration(@Param("model") String model, @Param("generation") String generation);
 
+    @Query(value = "SELECT exists(select 1 from engine where engine.engine = :engine)", nativeQuery = true)
+    Long checkIfEngineExist(@Param("engine") String engine);
+
 }
