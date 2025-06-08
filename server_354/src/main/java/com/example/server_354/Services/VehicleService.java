@@ -89,15 +89,47 @@ public class VehicleService {
         return engineRepository.checkIfEngineExist(engine) == 1 ? true : false;
     }
 
-    public void addVehicleMake(String vehicleComponentValue) {
+    public void addVehicleMake(String make, boolean makeExist) {
+        if(!makeExist){
+            makeRepository.addVehicleMake(make);
+        }
     }
 
-    public void addVehicleModel(String vehicleComponentValue) {
+    public void addVehicleModel(String make, String model, boolean modelExist) {
+        if(!modelExist){
+            Integer makeId = makeRepository.getMakeIdByMake(make);
+            modelRepository.addVehicleModel(makeId, model);
+        }
     }
 
-    public void addVehicleGeneration(String vehicleComponentValue) {
+    public void addVehicleGeneration(String model, String generation, boolean generationExist) {
+        if(!generationExist){
+            generationRepository.addVehicleGeneration(generation);
+        }
+        checkAndAddModelGeneration(model, generation);
     }
 
-    public void addVehicleEngine(String vehicleComponentValue) {
+    public void checkAndAddModelGeneration(String model, String generation){
+        Integer modelId = modelRepository.getModelIdByModel(model);
+        Integer generationId = generationRepository.getGenerationIdByGeneration(generation);
+        if(!(generationRepository.checkIfModelGenerationTableKeyExists(modelId, generationId) >= 1)){
+            generationRepository.addVehicleModelGeneration(modelId, generationId);
+        }
     }
+
+    public void addVehicleEngine(String generation, String engine, boolean engineExist) {
+        if(!engineExist){
+            engineRepository.addVehicleEngine(engine);
+        }
+        checkAndAddGenerationEngine(generation, engine);
+    }
+
+    public void checkAndAddGenerationEngine(String generation, String engine){
+        Integer generationId = generationRepository.getGenerationIdByGeneration(generation);
+        Integer engineId = engineRepository.getEngineIdByEngine(engine);
+        if(!(engineRepository.checkIfGenerationEngineTableKeyExists(generationId, engineId) >= 1)){
+            engineRepository.addVehicleGenerationEngine(generationId, engineId);
+        }
+    }
+
 }

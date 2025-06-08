@@ -2,6 +2,9 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Net.Http;
+using System.Text.Json;
+using System.Text;
 using System.Windows.Forms;
 
 namespace projkat.components
@@ -50,7 +53,7 @@ namespace projkat.components
             modelLabel.ForeColor = Color.FromArgb(128, 255, 0);
             modelErrorLabel.ForeColor = Color.Red;
             modelLabel.Location = new Point(80, 125);
-            modelErrorLabel.Location = new Point(190, 135);
+            modelErrorLabel.Location = new Point(190, 145);
 
             filteredModelComboBox = new FilteredComboBox<ModelObject>(190, 120, "getModelAll", "model");
 
@@ -60,7 +63,7 @@ namespace projkat.components
             generationLabel.ForeColor = Color.FromArgb(128, 255, 0);
             generationErrorLabel.ForeColor = Color.Red;
             generationLabel.Location = new Point(80, 175);
-            generationErrorLabel.Location = new Point(190, 155);
+            generationErrorLabel.Location = new Point(190, 195);
 
             filteredGenerationComboBox = new FilteredComboBox<Generation>(190, 170, "getGenerationAll", "generation");
 
@@ -70,7 +73,7 @@ namespace projkat.components
             engineLabel.ForeColor = Color.FromArgb(128, 255, 0);
             engineErrorLabel.ForeColor = Color.Red;
             engineLabel.Location = new Point(80, 225);
-            engineErrorLabel.Location = new Point(190, 225);
+            engineErrorLabel.Location = new Point(190, 245);
 
             filteredEngineComboBox = new FilteredComboBox<Engine>(190, 220, "getEngineAll", "engine");
 
@@ -117,18 +120,34 @@ namespace projkat.components
                 bool generationExist = await filteredGenerationComboBox.checkIfPropertyExist("generationExist", generationValue);
                 bool engineExist = await filteredEngineComboBox.checkIfPropertyExist("engineExist", engineValue);
 
+                VehicleComponent vehicleComponent = new VehicleComponent(makeValue, makeExist, modelValue,modelExist, generationValue, generationExist, engineValue, engineExist);
+                addNewVehicleType(vehicleComponent);
 
             }
 
         }
 
-        public async void addNewVehicleType(String method, String value)
+        public async void addNewVehicleType(VehicleComponent vehicleComponent)
         {
-            
+            try
+            {
+                String jsonString = JsonSerializer.Serialize(vehicleComponent);
+                StringContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponseMessage = await HttpClientProvider.Client.PostAsync($"http://localhost:8080/vehicle/postVehicle", content);
+                httpResponseMessage.EnsureSuccessStatusCode();
+                string responseMessage = await httpResponseMessage.Content.ReadAsStringAsync();
+
+                MessageBox.Show(responseMessage, "server response", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         public bool validateFields(String value, Label errorLabel, String type)
         {
+            errorLabel.Size = new Size(200,15);
             if (String.IsNullOrWhiteSpace(value))
             {
                 errorLabel.Text = $"{type} field can't be empty";

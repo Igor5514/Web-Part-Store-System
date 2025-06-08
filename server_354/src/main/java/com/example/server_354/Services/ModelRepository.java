@@ -3,8 +3,10 @@ package com.example.server_354.Services;
 import com.example.server_354.object.Model;
 import com.example.server_354.object.ModelObject;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,5 +23,13 @@ public interface ModelRepository extends JpaRepository<Model, Long> {
 
     @Query(value = "SELECT exists(select 1 from model where model.model = :model)", nativeQuery = true)
     Long checkIfModelExist(@Param("model") String model);
+
+    @Modifying
+    @Transactional
+    @Query(value = "INSERT INTO model (make_id, model) values (:makeId :model)", nativeQuery = true)
+    void addVehicleModel(@Param("makeId") Integer makeId, @Param("model") String model);
+
+
+
 
 }

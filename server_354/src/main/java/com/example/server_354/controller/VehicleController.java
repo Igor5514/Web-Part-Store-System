@@ -133,10 +133,6 @@ public class VehicleController {
     @GetMapping("/getGenerationAll")
     public ResponseEntity<?> getEveryGeneration(){
         try {
-            List<Generation> list = vehicleService.getEveryGeneration();
-            for (Generation o : list) {
-                System.out.println(o.getGeneration()+" "+o.getGeneration_id());
-            }
             return ResponseEntity.ok(vehicleService.getEveryGeneration());
         }catch (Exception e){
             System.out.println(e.getMessage());
@@ -201,23 +197,13 @@ public class VehicleController {
     @PostMapping("postVehicle")
     public ResponseEntity<?> postVehicleComponent(@RequestBody VehicleComponent vehicleComponent){
         try {
-            switch (vehicleComponent.getVehicleComponentType()){
-                case "make":
-                    vehicleService.addVehicleMake(vehicleComponent.getVehicleComponentValue());
-                    break;
-                case "model":
-                    vehicleService.addVehicleModel(vehicleComponent.getVehicleComponentValue());
-                    break;
-                case "generation":
-                    vehicleService.addVehicleGeneration(vehicleComponent.getVehicleComponentValue());
-                    break;
-                case "engine":
-                    vehicleService.addVehicleEngine(vehicleComponent.getVehicleComponentValue());
-                    break;
-            }
-            return ResponseEntity.ok().body(vehicleComponent.getVehicleComponentType() + " successfuly updated");
+            vehicleService.addVehicleMake(vehicleComponent.getMake(), vehicleComponent.isMakeValueExist());
+            vehicleService.addVehicleModel(vehicleComponent.getMake(), vehicleComponent.getModel(), vehicleComponent.isModelValueExist());
+            vehicleService.addVehicleGeneration(vehicleComponent.getModel(), vehicleComponent.getGeneration(), vehicleComponent.isGenerationValueExist());
+            vehicleService.addVehicleEngine(vehicleComponent.getGeneration(), vehicleComponent.getEngine(), vehicleComponent.isEngineValueExist());
+            return ResponseEntity.ok().body("vehicle successfuly updated");
         }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error while posting "+ vehicleComponent.getVehicleComponentType() + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error while posting vehicle");
         }
     }
 
