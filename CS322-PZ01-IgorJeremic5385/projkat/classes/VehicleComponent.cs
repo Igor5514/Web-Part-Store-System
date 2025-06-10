@@ -8,35 +8,35 @@ namespace projkat.classes
 {
     public class VehicleComponent
     {
-        public string vehicleComponentMakeValue { get; set; }
+        public string make { get; set; }
         public bool makeValueExist { get; set; }
-        public string vehicleComponentModelValue { get; set; }
+        public string model { get; set; }
         public bool modelValueExist { get; set; }
-        public string vehicleComponentGenerationValue { get; set; }
+        public string generation { get; set; }
         public bool generationValueExist { get; set; }
-        public string vehicleComponentEngineValue { get; set; }
+        public string engine { get; set; }
         public bool engineValueExist { get; set; }
 
         public VehicleComponent() { }
 
         public VehicleComponent(
-            string makeValue,
-            bool _makeValueExist,
-            string modelValue,
-            bool _modelValueExist,
-            string generationValue,
-            bool _generationValueExist,
-            string engineValue,
-            bool _engineValueExist)
+            string make,
+            bool makeValueExist,
+            string model,
+            bool modelValueExist,
+            string generation,
+            bool generationValueExist,
+            string engine,
+            bool engineValueExist)
         {
-            vehicleComponentMakeValue = makeValue;
-            makeValueExist = _makeValueExist;
-            vehicleComponentModelValue = modelValue;
-            modelValueExist = _modelValueExist;
-            vehicleComponentGenerationValue = generationValue;
-            generationValueExist = _generationValueExist;
-            vehicleComponentEngineValue = engineValue;
-            engineValueExist = _engineValueExist;
+            this.make = make;
+            this.makeValueExist = makeValueExist;
+            this.model = model;
+            this.modelValueExist = modelValueExist;
+            this.generation = generation;
+            this.generationValueExist = generationValueExist;
+            this.engine = engine;
+            this.engineValueExist = engineValueExist;
         }
 
     }

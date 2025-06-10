@@ -26,10 +26,9 @@ public interface EngineRepository extends JpaRepository<Engine, Long> {
     @Query(value = "SELECT engine_id from engine WHERE engine = :engine", nativeQuery = true)
     Integer getEngineIdByEngine(@Param("engine") String engine);
 
-    @Query(value = "SELECT COUNT(*) \n" +
-            "FROM generation_engine \n" +
-            "WHERE generation_id = :generationId AND engine_id = engineId;", nativeQuery = true)
-    Long checkIfGenerationEngineTableKeyExists(@Param("generationId") int generationId,@Param("engineId") int engineId );
+    @Query(value = "SELECT COUNT(*) FROM generation_engine " +
+            "WHERE generation_id = :generationId AND engine_id = :engineId", nativeQuery = true)
+    Long checkIfGenerationEngineTableKeyExists(@Param("generationId") int generationId, @Param("engineId") int engineId);
 
     @Modifying
     @Transactional

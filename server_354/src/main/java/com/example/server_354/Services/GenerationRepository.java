@@ -27,8 +27,8 @@ public interface GenerationRepository extends JpaRepository<Generation, Long> {
 
     @Query(value = "SELECT COUNT(*) \n" +
             "FROM model_generation \n" +
-            "WHERE model_id = :modeId AND generation_id = generationId;", nativeQuery = true)
-    Long checkIfModelGenerationTableKeyExists(@Param("modelId") int modelId,@Param("generationId") int generationId );
+            "WHERE model_id = :modelId AND generation_id = :generationId;", nativeQuery = true)
+    Long checkIfModelGenerationTableKeyExists(@Param("modelId") int modelId,@Param("generationId") int generationId);
 
 
     @Modifying
@@ -38,7 +38,7 @@ public interface GenerationRepository extends JpaRepository<Generation, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO model_generation (model_id, generation_id) values (:modelId , :generationId)", nativeQuery = true)
+    @Query(value = "INSERT INTO model_generation (model_id, generation_id) values (:modelId, :generationId)", nativeQuery = true)
     void addVehicleModelGeneration(@Param("modelId") Integer modelId, @Param("generationId") Integer generationId);
 
 }

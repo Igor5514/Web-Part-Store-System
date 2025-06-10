@@ -104,8 +104,10 @@ public class VehicleService {
 
     public void addVehicleGeneration(String model, String generation, boolean generationExist) {
         if(!generationExist){
+
             generationRepository.addVehicleGeneration(generation);
         }
+
         checkAndAddModelGeneration(model, generation);
     }
 

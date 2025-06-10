@@ -26,7 +26,7 @@ public interface ModelRepository extends JpaRepository<Model, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO model (make_id, model) values (:makeId :model)", nativeQuery = true)
+    @Query(value = "INSERT INTO model (make_id, model) values (:makeId, :model)", nativeQuery = true)
     void addVehicleModel(@Param("makeId") Integer makeId, @Param("model") String model);
 
 
