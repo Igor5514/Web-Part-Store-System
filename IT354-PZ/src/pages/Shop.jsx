@@ -9,6 +9,7 @@ import image3 from "../images/cart.png";
 export const Shop = () => {
     const [group, setGroup] = useState([]);
     const [partsList, setPartsList] = useState([]);
+    const [pageCount, setPageCount] = useState(1);
     const [isFirstCardContainerActive, setIsFirstCardContainerActive] = useState(true);
     const [selectedGroup, setSelectedGroup] = useState("");
     const [selectedCar, setSelectedCar] = useState({});
@@ -20,32 +21,49 @@ export const Shop = () => {
     
 
     useEffect(() => {
+        console.log(pageCount)
         async function loadGroupComponents() {
-            try {
-                const response = await fetch("http://localhost:8080/vehicle/getPartGroup");
-                const data = await response.json();
-
-                if (response.ok) {
-                    console.log("data: ", data);
-                    setGroup(data);
-                } else {
-                    console.error(data.error);
+            if(pageCount === 1){
+                try {
+                    const response = await fetch("http://localhost:8080/vehicle/getPartGroup");
+                    const data = await response.json();
+    
+                    if (response.ok) {
+                        console.log("data: ", data);
+                        setGroup(data);
+                    } else {
+                        console.error(data.error);
+                    }
+                } catch (error) {
+                    console.log(error.message);
                 }
-            } catch (error) {
-                console.log(error.message);
             }
         }
+        
         loadGroupComponents();
-    }, []);
+    }, [pageCount]);
 
-    
+    useEffect(() => {
+        if(partsList.length > 0){
+            setPageCount(prev => prev + 1);
+        }
+        
+    }, [partsList])
+
+    const handleGoBack = () => {
+        if(pageCount === 2){
+            setPartsList([]);
+            setIsFirstCardContainerActive(true)
+            setPageCount(prev => prev - 1);
+        }
+    }
 
     return (
         <>
             <div className="main-shop-container">
                 <div className='shop-header' style={{display: "flex", flexDirection: "column"}}>
                     <div className='header-container'>
-                        <button className='header-button'>Go back</button>
+                        <button className='header-button back-button' onClick={handleGoBack}>Go back</button>
                         <div className='search-container'>
                             <input type="text" name="part-input" className=" bg-secondary text-light border-0" />
                             <button className='header-button'  >Search</button>
@@ -85,6 +103,7 @@ export const Shop = () => {
                         }) : (
                             console.log(partsList)
                         )
+
                     }
                 </div>
             </div>

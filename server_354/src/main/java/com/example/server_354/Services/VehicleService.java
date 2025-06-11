@@ -106,7 +106,6 @@ public class VehicleService {
 
     public void addVehicleGeneration(String model, String generation, boolean generationExist) {
         if(!generationExist){
-
             generationRepository.addVehicleGeneration(generation);
         }
 
@@ -121,18 +120,19 @@ public class VehicleService {
         }
     }
 
-    public void addVehicleEngine(String generation, String engine, boolean engineExist) {
+    public void addVehicleEngine(String model, String generation, String engine, boolean engineExist) {
         if(!engineExist){
             engineRepository.addVehicleEngine(engine);
         }
-        checkAndAddGenerationEngine(generation, engine);
+        checkAndAddGenerationEngine(model, generation, engine);
     }
 
-    public void checkAndAddGenerationEngine(String generation, String engine){
-        Integer generationId = generationRepository.getGenerationIdByGeneration(generation);
-        Integer engineId = engineRepository.getEngineIdByEngine(engine);
-        if(!(engineRepository.checkIfGenerationEngineTableKeyExists(generationId, engineId) >= 1)){
-            engineRepository.addVehicleGenerationEngine(generationId, engineId);
+    public void checkAndAddGenerationEngine(String model, String generation, String engine){
+        int modelId = modelRepository.getModelIdByModel(model);
+        int generationId = generationRepository.getGenerationIdByGeneration(generation);
+        int engineId = engineRepository.getEngineIdByEngine(engine);
+        if(!(engineRepository.checkIfModelGenerationEngineTableKeyExists(modelId, generationId, engineId) >= 1)){
+            engineRepository.addVehicleModelGenerationEngine(modelId, generationId, engineId);
         }
     }
 

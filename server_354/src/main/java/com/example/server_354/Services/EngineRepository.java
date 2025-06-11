@@ -25,9 +25,9 @@ public interface EngineRepository extends JpaRepository<Engine, Long> {
     @Query(value = "SELECT engine_id from engine WHERE engine = :engine", nativeQuery = true)
     Integer getEngineIdByEngine(@Param("engine") String engine);
 
-    @Query(value = "SELECT COUNT(*) FROM generation_engine " +
-            "WHERE generation_id = :generationId AND engine_id = :engineId", nativeQuery = true)
-    Long checkIfGenerationEngineTableKeyExists(@Param("generationId") int generationId, @Param("engineId") int engineId);
+    @Query(value = "SELECT COUNT(*) FROM model_generation_engine " +
+            "WHERE model_id = :modelId AND generation_id = :generationId AND engine_id = :engineId", nativeQuery = true)
+    Long checkIfModelGenerationEngineTableKeyExists(@Param("modelId") int modelId, @Param("generationId") int generationId, @Param("engineId") int engineId);
 
     @Modifying
     @Transactional
@@ -36,7 +36,7 @@ public interface EngineRepository extends JpaRepository<Engine, Long> {
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO generation_engine (generation_id, engine_id) values (:generationId , :engineId)", nativeQuery = true)
-    void addVehicleGenerationEngine(@Param("generationId") Integer generationId, @Param("engineId") Integer engineId);
+    @Query(value = "INSERT INTO model_generation_engine (model_id, generation_id, engine_id) values (:modelId, :generationId , :engineId)", nativeQuery = true)
+    void addVehicleModelGenerationEngine(@Param("modelId") int modelId, @Param("generationId") int generationId, @Param("engineId") int engineId);
 
 }

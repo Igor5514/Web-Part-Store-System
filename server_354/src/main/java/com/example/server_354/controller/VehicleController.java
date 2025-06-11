@@ -200,7 +200,7 @@ public class VehicleController {
             vehicleService.addVehicleMake(vehicleComponent.getMake(), vehicleComponent.isMakeValueExist());
             vehicleService.addVehicleModel(vehicleComponent.getMake(), vehicleComponent.getModel(), vehicleComponent.isModelValueExist());
             vehicleService.addVehicleGeneration(vehicleComponent.getModel(), vehicleComponent.getGeneration(), vehicleComponent.isGenerationValueExist());
-            vehicleService.addVehicleEngine(vehicleComponent.getGeneration(), vehicleComponent.getEngine(), vehicleComponent.isEngineValueExist());
+            vehicleService.addVehicleEngine(vehicleComponent.getModel(), vehicleComponent.getGeneration(), vehicleComponent.getEngine(), vehicleComponent.isEngineValueExist());
             return ResponseEntity.ok().body("vehicle successfuly updated");
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error while posting vehicle");

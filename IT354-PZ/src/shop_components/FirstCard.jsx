@@ -27,7 +27,6 @@ const FirstCard = ({title, paragraphs, img, setFirstCardActive, setPartsList}) =
      function buttonListener(e){
         e.preventDefault();
         const h2Title = e.target.closest("div").querySelector("h3").textContent;
-        console.log(h2Title)
         loadPartsType(h2Title)
         setFirstCardActive(false)
         
