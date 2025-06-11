@@ -38,7 +38,9 @@ public class VehicleService {
     }
 
     public List<String> getEngineByModelAndGeneration(String model, String generation){
-        return engineRepository.getEngineByModelAndGeneration(model, generation);
+        int modelId = modelRepository.getModelIdByModel(model);
+        int generationId = generationRepository.getGenerationIdByGeneration(generation);
+        return engineRepository.getEngineByModelAndGeneration(modelId, generationId);
     }
 
     public List<CarPartGroup> getPartsGroup(){

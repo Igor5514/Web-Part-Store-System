@@ -12,13 +12,12 @@ import java.util.List;
 
 public interface EngineRepository extends JpaRepository<Engine, Long> {
 
-    @Query(value = "SELECT engine from engine\n" +
-                   "INNER join generation_engine ON engine.engine_id = generation_engine.engine_id\n" +
-                   "INNER join generation ON generation_engine.generation_id = generation.generation_id\n" +
-                   "INNER JOIN model_generation ON model_generation.generation_id = generation.generation_id\n" +
-                   "INNER JOIN model ON model_generation.model_id = model.model_id\n" +
-                   "WHERE model = :model and generation = :generation", nativeQuery = true)
-    List<String> getEngineByModelAndGeneration(@Param("model") String model, @Param("generation") String generation);
+    @Query(value = """
+    SELECT e.engine FROM engine e
+    JOIN model_generation_engine mge ON e.engine_id = mge.engine_id
+    WHERE mge.model_id = :modelId AND mge.generation_id = :generationId
+    """, nativeQuery = true)
+    List<String> getEngineByModelAndGeneration(@Param("modelId") int modelId, @Param("generationId") int generationId);
 
     @Query(value = "SELECT exists(select 1 from engine where engine.engine = :engine)", nativeQuery = true)
     Long checkIfEngineExist(@Param("engine") String engine);
