@@ -26,6 +26,10 @@ const DropdownVehicleMenu = ({setValue,dropdownButtonText, dropdownItems, setIsD
     }
   }
 
+  const filterItems = (items) => {
+
+  }
+
   return (
     <div className='dropdown-vehicle-container' >
       <button className="car-dropdown-display text-white fs-6 d-flex" onClick={e => listSwitch(e)} style={{ padding: "0.3em 0 0.3em 0.5em", backgroundColor:" #0d0d0d", border:"1px solid white"}}>
@@ -34,11 +38,13 @@ const DropdownVehicleMenu = ({setValue,dropdownButtonText, dropdownItems, setIsD
       </button>
       <div className = {isListPresent ? `list-holder` : `none-display`} style={{backgroundColor: " #1a1a1a"}}>
         <div className='p-2' style={{backgroundColor: "black"}}>
-          <input style={{ flex: "1", color:"white"}} className="car-dropdown-display" type="text" value={inputValue} onChange={(e) => onChangeInput(e)} />
+          <input style={{ flex: "1", color:"white"}} className="car-dropdown-display" type="text" 
+          value={inputValue} onChange={(e) => onChangeInput(e)}/>
         </div>
         <ul name="dropdown-input">
           {
-            items.length > 0 && items.map((item,index) => <li onClick={() => {
+            items.length > 0 && items.filter(item => item.toLowerCase().includes(inputValue.toLowerCase()))
+            .map((item,index) => <li onClick={() => {
               setValue(item);
               setListPresent(false);
               setDropdownText(item);

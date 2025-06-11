@@ -5,12 +5,13 @@ import "./pages.css"
 import CarSelectionMenu from "../shop_components/CarSelectionMenu.jsx";
 import image2 from "../images/service.jpg";
 import image3 from "../images/cart.png";
+import PartContainer from '../shop_components/PartContainer.jsx';
 
 export const Shop = () => {
     const [group, setGroup] = useState([]);
     const [partsList, setPartsList] = useState([]);
-    const [pageCount, setPageCount] = useState(1);
     const [isFirstCardContainerActive, setIsFirstCardContainerActive] = useState(true);
+    const [isPartGroupContainerActive, setIsPartGroupContainerActive] = useState(true);
     const [selectedGroup, setSelectedGroup] = useState("");
     const [selectedCar, setSelectedCar] = useState({});
 
@@ -18,12 +19,14 @@ export const Shop = () => {
         setIsFirstCardContainerActive(value)
     }
 
-    
+     function setPartGroupContainerActive(value){
+        setIsPartGroupContainerActive(value)
+    }
+
 
     useEffect(() => {
-        console.log(pageCount)
         async function loadGroupComponents() {
-            if(pageCount === 1){
+            if(isFirstCardContainerActive){
                 try {
                     const response = await fetch("http://localhost:8080/vehicle/getPartGroup");
                     const data = await response.json();
@@ -41,20 +44,12 @@ export const Shop = () => {
         }
         
         loadGroupComponents();
-    }, [pageCount]);
-
-    useEffect(() => {
-        if(partsList.length > 0){
-            setPageCount(prev => prev + 1);
-        }
-        
-    }, [partsList])
+    }, [isFirstCardContainerActive]);
 
     const handleGoBack = () => {
-        if(pageCount === 2){
+        if(!isFirstCardContainerActive){
             setPartsList([]);
             setIsFirstCardContainerActive(true)
-            setPageCount(prev => prev - 1);
         }
     }
 
@@ -82,7 +77,9 @@ export const Shop = () => {
                     </div>
                 </div>
                 <h3 className="shop-title">Order best quality parts online</h3>
-                <div className="part-carts-grid-container">
+
+                !isPartGroupContainerActive && <PartContainer setPartGroupContainerActive={setPartGroupContainerActive} />
+                isPartGroupContainerActive && <div className="part-carts-grid-container">
                     {
                         isFirstCardContainerActive && group.length > 0 ? group.map((item, index) => {
                             const img = `data:image/png;base64,${item.groupImage}`;
@@ -98,7 +95,7 @@ export const Shop = () => {
                         !isFirstCardContainerActive && partsList.length > 0 ? partsList.map((item, index) => {
                             const img = `data:image/png;base64,${item.groupImage}`;
                             return (
-                                <SecondCard key={index} title={item.partName} img={img} />
+                                <SecondCard key={index} title={item.partName} img={img} setPartGroupContainerActive={setPartGroupContainerActive}/>
                             )
                         }) : (
                             console.log(partsList)
