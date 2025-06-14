@@ -1,11 +1,11 @@
 import React from "react";
 import "./ShopComponents.css";
 
-const SecondCard = ({title, img}) => {
+const SecondCard = ({title, img, setPageCountProp}) => {
 
     function buttonListener(e){
         e.preventDefault();
-        
+        setPageCountProp(prev => prev += 1)
     }
 
     return(

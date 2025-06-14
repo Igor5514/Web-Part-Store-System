@@ -108,7 +108,6 @@ public class VehicleService {
         if(!generationExist){
             generationRepository.addVehicleGeneration(generation);
         }
-
         checkAndAddModelGeneration(model, generation);
     }
 

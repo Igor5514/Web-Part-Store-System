@@ -1,7 +1,7 @@
 import React from "react";
 import "./ShopComponents.css";
 
-const FirstCard = ({title, paragraphs, img, setFirstCardActive, setPartsList}) => {
+const FirstCard = ({title, paragraphs, img, setPageCountProp, setPartsList}) => {
 
     async function loadPartsType(groupName){
         try{
@@ -28,7 +28,7 @@ const FirstCard = ({title, paragraphs, img, setFirstCardActive, setPartsList}) =
         e.preventDefault();
         const h2Title = e.target.closest("div").querySelector("h3").textContent;
         loadPartsType(h2Title)
-        setFirstCardActive(false)
+        setPageCountProp(prev => prev +=1)
         
     }
 

@@ -13,7 +13,7 @@ import java.util.List;
 public interface EngineRepository extends JpaRepository<Engine, Long> {
 
     @Query(value = """
-    SELECT e.engine FROM engine e
+    SELECT e.engine FROM engine e 
     JOIN model_generation_engine mge ON e.engine_id = mge.engine_id
     WHERE mge.model_id = :modelId AND mge.generation_id = :generationId
     """, nativeQuery = true)

@@ -10,23 +10,18 @@ import PartContainer from '../shop_components/PartContainer.jsx';
 export const Shop = () => {
     const [group, setGroup] = useState([]);
     const [partsList, setPartsList] = useState([]);
-    const [isFirstCardContainerActive, setIsFirstCardContainerActive] = useState(true);
-    const [isPartGroupContainerActive, setIsPartGroupContainerActive] = useState(true);
+    const [pageCount, setPageCount] = useState(1);
     const [selectedGroup, setSelectedGroup] = useState("");
     const [selectedCar, setSelectedCar] = useState({});
 
-    function setFirstCardActive(value){
-        setIsFirstCardContainerActive(value)
-    }
-
-     function setPartGroupContainerActive(value){
-        setIsPartGroupContainerActive(value)
+    function setPageCountProp(value){
+        setPageCount(value)
     }
 
 
     useEffect(() => {
         async function loadGroupComponents() {
-            if(isFirstCardContainerActive){
+            if(pageCount === 1){
                 try {
                     const response = await fetch("http://localhost:8080/vehicle/getPartGroup");
                     const data = await response.json();
@@ -44,12 +39,11 @@ export const Shop = () => {
         }
         
         loadGroupComponents();
-    }, [isFirstCardContainerActive]);
+    }, [pageCount]);
 
     const handleGoBack = () => {
-        if(!isFirstCardContainerActive){
-            setPartsList([]);
-            setIsFirstCardContainerActive(true)
+        if(pageCount!=1){
+            setPageCount(prev => prev -=1);
         }
     }
 
@@ -78,31 +72,31 @@ export const Shop = () => {
                 </div>
                 <h3 className="shop-title">Order best quality parts online</h3>
 
-                !isPartGroupContainerActive && <PartContainer setPartGroupContainerActive={setPartGroupContainerActive} />
-                isPartGroupContainerActive && <div className="part-carts-grid-container">
+                {(pageCount === 3) && <PartContainer setPageCountProp={setPageCountProp} />}
+                {(pageCount === 1 || pageCount === 1) && <div className="part-carts-grid-container">
                     {
-                        isFirstCardContainerActive && group.length > 0 ? group.map((item, index) => {
+                        (pageCount === 1) && group.length > 0 ? group.map((item, index) => {
                             const img = `data:image/png;base64,${item.groupImage}`;
                             return (
                                 <FirstCard key={index} title={item.groupName} paragraphs={item.partsList} img={img}
-                                setFirstCardActive={setFirstCardActive} setPartsList={setPartsList}/>
+                                setPageCountProp={setPageCountProp} setPartsList={setPartsList}/>
                             );
                         }) : (
                             console.log("group cards inactive")
                         )
                     }
                     {
-                        !isFirstCardContainerActive && partsList.length > 0 ? partsList.map((item, index) => {
+                        (pageCount === 2) && partsList.length > 0 ? partsList.map((item, index) => {
                             const img = `data:image/png;base64,${item.groupImage}`;
                             return (
-                                <SecondCard key={index} title={item.partName} img={img} setPartGroupContainerActive={setPartGroupContainerActive}/>
+                                <SecondCard key={index} title={item.partName} img={img} setPageCountProp={setPageCountProp}/>
                             )
                         }) : (
                             console.log(partsList)
                         )
 
                     }
-                </div>
+                </div>}
             </div>
         </>
     );

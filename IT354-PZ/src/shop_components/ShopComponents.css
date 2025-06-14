@@ -1,5 +1,7 @@
+
+
 .main-card-container{
-    width: 24em;
+    width: 100%;
     color: white;
     display: flex;
     flex-direction: column;
@@ -129,10 +131,136 @@
     width: 100%;
 }
 
-
 .dropdown-selection-button{
     width: 100%;
     font-size: 1.1em;
     padding: 0.3em 0 0.3em 0;
 }
 
+.chekbox-containers h4{
+    border-bottom: 1px solid white;
+    padding: 0.5em;
+    width: 90%;
+    transform: translateX(5%);
+    background-color: #1a1a1a;
+    margin-top: 0.5em;
+}
+
+.avaliable-container{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5em;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+
+}
+
+.brand-container{
+    display: flex;
+    flex-direction: column;
+    margin: 1.5em;
+    background-color: #1a1a1a;
+
+}
+
+.chekbox-containers{
+    width: 27%;
+   
+}
+
+.chekbox-containers label{
+    margin-bottom: 0.5em;
+    background-color: #1a1a1a;
+
+}
+
+.chekbox-containers span{
+    margin-left: 0.5em;
+    background-color: #1a1a1a;
+
+}
+
+.checkbox-design-container{
+    border: 1px solid white;
+    margin-bottom: 1em;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+}
+
+.parts-component{
+    width: 78%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.part-container{
+    width: 70%;
+    margin-left: 1em;
+}
+
+.part-box{
+    border: 1px solid white;
+    display: flex;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 0.5em;
+}
+
+.part-image{
+    width: 35%;
+    background-color: #1a1a1a;
+}
+
+.part-description{
+    width: 32.5%;
+    background-color: #1a1a1a;
+}
+
+.part-description-2{
+    width: 32.5%;
+    background-color: #1a1a1a;
+}
+
+.phone-title{
+    background-color: #1a1a1a;
+    color: white;
+    display: flex; 
+    align-items: center; 
+    gap: 0.5em;
+}
+
+.part-description ul{
+    width: 100%;
+
+}
+
+.part-description ul li{
+    padding: 0.3em;
+    width: 100%;
+    background-color:  #333333;
+}
+
+.avaliability-paragraph{
+    margin-top: 1.5em;
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif; 
+    font-weight: bold;
+    display: flex;
+    align-items: center; 
+    gap: 0.3em; 
+    color: white; 
+}
+
+.add-to-cart-button{
+    padding: 0.3em 3em;
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+
+
+@media (min-width: 670px) and (max-width: 846px){
+    .main-card-container{
+        width: 70%;
+    }
+}
