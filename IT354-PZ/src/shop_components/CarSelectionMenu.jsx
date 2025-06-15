@@ -4,6 +4,7 @@ import ModelDropdown from './ModelDropdown';
 import GenerationDropdown from './GenerationDropdown';
 import EngineDropDown from './EngineDropdown';
 import "./ShopComponents.css"
+  import { useVehicle } from '../context/VehicleProvider'; 
 
 const CarSelectionMenu = () => {
 
@@ -11,14 +12,23 @@ const CarSelectionMenu = () => {
     const [model, setModel] = useState(null);
     const [generation, setGeneration] = useState(null);
     const [engine, setEngine] = useState(null);
+    const [errorText, setErrorText] = useState("");
+    const {vehicle, setVehicle} = useVehicle();
 
-    function setMakeRef(sentMakeRef) {
-      makeRef.current = sentMakeRef;
-    }
-
-    function setModelRef(sentModelRef) {
-      modelRef.current = sentModelRef;
-    }
+    const handleSearchClick = () => {
+        if(make != null && model != null && generation != null && engine != null){
+            setErrorText("")
+            setVehicle(prev => ({
+                ...prev,
+                make: make,
+                model: model,
+                generation: generation,
+                engine: engine
+            }))
+        }else{
+            setErrorText("all fields must be filled")
+        }
+    };
 
     return (
         <div className='main-car-selection-container'>
@@ -30,7 +40,8 @@ const CarSelectionMenu = () => {
                 <EngineDropDown setEngine={setEngine} selectedModel={model} selectedGeneration={generation} />
             </div>
             <div>
-                <button className='text-white dropdown-selection-button'>Search parts for your vehicle</button>
+                <button className='text-white dropdown-selection-button' onClick={handleSearchClick}>Search parts for your vehicle</button>
+                <p style={{color: "red", backgroundColor:" #1a1a1a"}} className='m-0'>{errorText}</p>
             </div>
 
         </div>

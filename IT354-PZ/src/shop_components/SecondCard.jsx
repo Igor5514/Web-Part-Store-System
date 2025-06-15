@@ -1,11 +1,18 @@
 import React from "react";
 import "./ShopComponents.css";
+import { useVehicle } from "../context/VehicleProvider";
 
 const SecondCard = ({title, img, setPageCountProp}) => {
+
+    const {vehicle, setVehicle} = useVehicle();
 
     function buttonListener(e){
         e.preventDefault();
         setPageCountProp(prev => prev += 1)
+        
+        console.log(vehicle.make)
+        console.log(vehicle.model)
+        console.log(vehicle.generation)
     }
 
     return(

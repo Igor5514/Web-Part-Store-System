@@ -7,7 +7,7 @@ import boxIcon from '../images/green-box-icon.png'
 const PartBox = () => {
     return (
         <>
-            <div className='part-box text-white pb-4'>
+            <div className='part-box text-white'>
                 <img src={firstImage} className='part-image p-3'/>
                 <div className='part-description p-3'>
                     <h3 className='part-title ' style={{backgroundColor: " #1a1a1a"}}>Title</h3>
@@ -18,7 +18,7 @@ const PartBox = () => {
                         <li style={{backgroundColor: " #1a1a1a"}}>nesto: nesto</li>
                     </ul>
                 </div>
-                <div className='part-description-2 pt-2'>
+                <div className='part-description-2 p-4'>
                     <p style={{backgroundColor: " #1a1a1a"}} className='m-1'>contact us and order </p>    
                     <h6 className='phone-title'>
                         <img src={phoneIcon} alt="Phone" width="25" height="25" style={{backgroundColor: " #1a1a1a"}} />

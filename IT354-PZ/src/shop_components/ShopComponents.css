@@ -102,7 +102,7 @@
 
 
 .main-car-selection-container{
-    padding: 2em;
+    padding:  2em;
     display: flex;
     flex-direction: column;
     width: 26em;
@@ -195,7 +195,7 @@
 }
 
 .part-container{
-    width: 70%;
+    width: 75%;
     margin-left: 1em;
 }
 
@@ -209,6 +209,7 @@
 
 .part-image{
     width: 35%;
+    height: 35%;
     background-color: #1a1a1a;
 }
 
@@ -218,8 +219,14 @@
 }
 
 .part-description-2{
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    flex-direction: column;
     width: 32.5%;
     background-color: #1a1a1a;
+    border-left: 1px solid white;
+
 }
 
 .phone-title{
@@ -253,9 +260,13 @@
 }
 
 .add-to-cart-button{
-    padding: 0.3em 3em;
+    padding: 0.3em 2em;
     font-size: 1.2em;
     margin-top: 1em;
+}
+
+.part-description h3:hover{
+    text-decoration: underline;
 }
 
 

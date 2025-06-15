@@ -9,10 +9,11 @@ import PartContainer from '../shop_components/PartContainer.jsx';
 
 export const Shop = () => {
     const [group, setGroup] = useState([]);
-    const [partsList, setPartsList] = useState([]);
+    const [partsTypeList, setPartsTypeList] = useState([]);
     const [pageCount, setPageCount] = useState(1);
     const [selectedGroup, setSelectedGroup] = useState("");
     const [selectedCar, setSelectedCar] = useState({});
+    const [partList, setPartList] = useState([]);
 
     function setPageCountProp(value){
         setPageCount(value)
@@ -73,28 +74,28 @@ export const Shop = () => {
                 <h3 className="shop-title">Order best quality parts online</h3>
 
                 {(pageCount === 3) && <PartContainer setPageCountProp={setPageCountProp} />}
-                {(pageCount === 1 || pageCount === 1) && <div className="part-carts-grid-container">
+                
+                {(pageCount === 1 || pageCount === 2) && <div className="part-carts-grid-container">
                     {
                         (pageCount === 1) && group.length > 0 ? group.map((item, index) => {
                             const img = `data:image/png;base64,${item.groupImage}`;
                             return (
                                 <FirstCard key={index} title={item.groupName} paragraphs={item.partsList} img={img}
-                                setPageCountProp={setPageCountProp} setPartsList={setPartsList}/>
+                                setPageCountProp={setPageCountProp} setPartsTypeList={setPartsTypeList}/>
                             );
                         }) : (
                             console.log("group cards inactive")
                         )
                     }
                     {
-                        (pageCount === 2) && partsList.length > 0 ? partsList.map((item, index) => {
+                        (pageCount === 2) && partsTypeList.length > 0 ? partsTypeList.map((item, index) => {
                             const img = `data:image/png;base64,${item.groupImage}`;
                             return (
                                 <SecondCard key={index} title={item.partName} img={img} setPageCountProp={setPageCountProp}/>
                             )
                         }) : (
-                            console.log(partsList)
+                            console.log(partsTypeList)
                         )
-
                     }
                 </div>}
             </div>

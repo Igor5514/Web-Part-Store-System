@@ -1,7 +1,7 @@
 import React from "react";
 import "./ShopComponents.css";
 
-const FirstCard = ({title, paragraphs, img, setPageCountProp, setPartsList}) => {
+const FirstCard = ({title, paragraphs, img, setPageCountProp, setPartsTypeList}) => {
 
     async function loadPartsType(groupName){
         try{
@@ -13,7 +13,7 @@ const FirstCard = ({title, paragraphs, img, setPageCountProp, setPartsList}) => 
                 body: JSON.stringify(groupName)
             })
             const data = await response.json();
-            setPartsList(data)
+            setPartsTypeList(data)
             if(response.ok){
                 console.log("parts loaded successfully");
             }else{
