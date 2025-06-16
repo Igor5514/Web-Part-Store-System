@@ -5,65 +5,60 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
 public class Vehicle {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id = 0;
     private String make;
     private String model;
     private String generation;
     private String engine;
+    private String name;
 
-    public Vehicle(String make, String model, String generation, String engine) {
+    public Vehicle(String make, String model, String generation, String engine, String name) {
         this.make = make;
         this.model = model;
         this.generation = generation;
         this.engine = engine;
-    }
-
-    public Vehicle() {
-
+        this.name = name;
     }
 
     public String getMake() {
         return make;
     }
 
-    public String getModel() {
-        return model;
-    }
-
-    public String getGeneration() {
-        return generation;
-    }
-
-    public String getEngine() {
-        return engine;
-    }
-
-    // Setters
     public void setMake(String make) {
         this.make = make;
+    }
+
+    public String getModel() {
+        return model;
     }
 
     public void setModel(String model) {
         this.model = model;
     }
 
+    public String getGeneration() {
+        return generation;
+    }
+
     public void setGeneration(String generation) {
         this.generation = generation;
+    }
+
+    public String getEngine() {
+        return engine;
     }
 
     public void setEngine(String engine) {
         this.engine = engine;
     }
 
-    @Override
-    public String toString() {
-        return make + " " + model + " (" + generation + ") - Engine: " + engine;
+    public String getName() {
+        return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 

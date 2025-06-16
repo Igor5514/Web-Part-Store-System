@@ -19,6 +19,9 @@ export const Shop = () => {
         setPageCount(value)
     }
 
+    function setPartListProp(value){
+        setPartList(value)
+    }
 
     useEffect(() => {
         async function loadGroupComponents() {
@@ -73,7 +76,7 @@ export const Shop = () => {
                 </div>
                 <h3 className="shop-title">Order best quality parts online</h3>
 
-                {(pageCount === 3) && <PartContainer setPageCountProp={setPageCountProp} />}
+                {(pageCount === 3) && <PartContainer setPageCountProp={setPageCountProp} parts = {partList} />}
                 
                 {(pageCount === 1 || pageCount === 2) && <div className="part-carts-grid-container">
                     {
@@ -81,7 +84,7 @@ export const Shop = () => {
                             const img = `data:image/png;base64,${item.groupImage}`;
                             return (
                                 <FirstCard key={index} title={item.groupName} paragraphs={item.partsList} img={img}
-                                setPageCountProp={setPageCountProp} setPartsTypeList={setPartsTypeList}/>
+                                setPageCountProp={setPageCountProp} setPartsTypeList={setPartsTypeList} />
                             );
                         }) : (
                             console.log("group cards inactive")
@@ -91,7 +94,8 @@ export const Shop = () => {
                         (pageCount === 2) && partsTypeList.length > 0 ? partsTypeList.map((item, index) => {
                             const img = `data:image/png;base64,${item.groupImage}`;
                             return (
-                                <SecondCard key={index} title={item.partName} img={img} setPageCountProp={setPageCountProp}/>
+                                <SecondCard key={index} title={item.partName} img={img}
+                                 setPageCountProp={setPageCountProp} setPartListProp={setPartListProp}/>
                             )
                         }) : (
                             console.log(partsTypeList)
