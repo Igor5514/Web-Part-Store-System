@@ -2,7 +2,7 @@ import { useState, useEffect, useMemo } from 'react';
 import "./ShopComponents.css";
 import PartBox from "./PartBox.jsx"
 
-const PartContainer = ({setPageCountProp, parts = []}) => {
+const PartContainer = ({parts = [],setCartItemsProp}) => {
     
     const [isChecked, setIsChecked] = useState({
         avaliable: false,
@@ -37,21 +37,21 @@ const PartContainer = ({setPageCountProp, parts = []}) => {
         });
     }, [uniqueBrands]);
 
-   const finalPartList = useMemo(() => {
-    const anyFilterActive = Object.entries(isChecked).some(([key, value]) => value === true);
-    if(!anyFilterActive) return parts;
+    const finalPartList = useMemo(() => {
+        const anyFilterActive = Object.entries(isChecked).some(([key, value]) => value === true);
+        if(!anyFilterActive) return parts;
 
-    return parts.filter(part => {
-        if(isChecked.avaliable && (part.stockQuantity > 0) !== true) return false;
-        if(isChecked.notAvaliable && (part.stockQuantity === 0) !== true) return false;
+        return parts.filter(part => {
+            if(isChecked.avaliable && (part.stockQuantity > 0) !== true) return false;
+            if(isChecked.notAvaliable && (part.stockQuantity === 0) !== true) return false;
 
-        const brandFilters = Object.entries(isChecked)
-            .filter(([key,value]) => key !== 'avaliable' && key !== 'notAvaliable' && value === true)
-            .map(([key])=> key);
+            const brandFilters = Object.entries(isChecked)
+                .filter(([key,value]) => key !== 'avaliable' && key !== 'notAvaliable' && value === true)
+                .map(([key])=> key);
 
-        if(brandFilters.length > 0 && !brandFilters.includes(part.brand)) return false;
+            if(brandFilters.length > 0 && !brandFilters.includes(part.brand)) return false;
 
-        return true;
+            return true;
         });
     }, [isChecked, parts]);
 
@@ -86,7 +86,7 @@ const PartContainer = ({setPageCountProp, parts = []}) => {
                 </div>
             </div>
             <div className='part-container'>
-                <PartBox parts={finalPartList} />
+                <PartBox parts={finalPartList} setCartItemsProp={setCartItemsProp}/>
             </div>
         </div>
     );

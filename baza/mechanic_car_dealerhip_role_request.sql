@@ -26,8 +26,9 @@ CREATE TABLE `role_request` (
   `role_id` int NOT NULL AUTO_INCREMENT,
   `email` varchar(255) DEFAULT NULL,
   `role` varchar(255) DEFAULT NULL,
+  `accept` bit(1) NOT NULL,
   PRIMARY KEY (`role_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +37,6 @@ CREATE TABLE `role_request` (
 
 LOCK TABLES `role_request` WRITE;
 /*!40000 ALTER TABLE `role_request` DISABLE KEYS */;
-INSERT INTO `role_request` VALUES (1,'jeremicigor2003@gmail.com','mechanic'),(2,'igor23@gmail.com','admin'),(3,'igor23@gmail.com','admin'),(4,'migor@gmail.com','seller'),(5,'migor@gmail.com','seller'),(6,'ig12@gmail.com','seller'),(7,'ig12@gmail.com','seller'),(8,'ig12@gmail.com','seller'),(9,'igor12@gmail.com','seller');
 /*!40000 ALTER TABLE `role_request` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-16 14:56:07
+-- Dump completed on 2025-06-16 20:01:22

@@ -15,7 +15,7 @@ const SecondCard = ({title, img, setPageCountProp, setPartListProp}) => {
     }
 
     const loadPartsByVehicle = async () => {
-        console.log(vehicle.model)
+        
         const Vehicle = {
             make: vehicle.make,
             model: vehicle.model,

@@ -31,7 +31,7 @@ CREATE TABLE `service_request` (
   `problem_type` varchar(255) DEFAULT NULL,
   `mech_email` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`service_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `service_request` (
 
 LOCK TABLES `service_request` WRITE;
 /*!40000 ALTER TABLE `service_request` DISABLE KEYS */;
-INSERT INTO `service_request` VALUES (15,'jeremicigor2003@gmail.com','aaaaaaaaaaaaaaaaaaaaa',_binary '\0','bbbbbbbbbbbbbbbbbbbbbbbbbbb','ttttttttttttttttttttttttttttt','igorjeremic128@gmail.com'),(16,'jeremicigor2003@gmail.com','aaaaaaaaaaaaaaaaaaaaa',_binary '\0','bbbbbbbbbbbbbbbbbbbbbbbbbbb','ttttttttttttttttttttttttttttt','igorjeremic128@gmail.com'),(17,'jeremicigor2003@gmail.com','aaaaaaaaaaaaaaaaaaa',_binary '\0','aaaaaaaaaaaaaaaaaaaaaaa','aaaaaaaaaaaaaaaaaaa','igorjeremic128@gmail.com'),(18,'jeremicigor2003@gmail.com','aaaaaaaaaaaaaaaaaaaaa',_binary '\0','cccccccccccccccccccccccccccccccc','ttttttttttttttttttttttttttttt','igorjeremic128@gmail.com'),(19,'jeremicigor2003@gmail.com','aaaaaaaaaaaaaaaaaaaaa',_binary '\0','bbbbbbbbbbbbbbbbbbbbbbbbb','ttttttttttttttttttttttttttttt','igorjeremic128@gmail.com'),(20,'jeremicigor2003@gmail.com','Igor Jeremic',_binary '\0','headlights dont work','light issue','johndoe@example.com'),(21,'jeremicigor2003@gmail.com','Igor Jeremic',_binary '','handbreak wont engage at all','handbreak issue','johndoe@example.com'),(22,'jeremicigor2003@gmail.com','Igor Jeremic',_binary '','car wont lock at all','lock issue','johndoe@example.com'),(23,'jeremicigor2003@gamil.com','Igor jeremic',_binary '\0','problem','problem','johndoe@example.com'),(24,NULL,NULL,_binary '\0',NULL,NULL,NULL),(25,NULL,NULL,_binary '\0',NULL,NULL,NULL),(26,'igorjeremic128@gmail.com','aaaaaaaaaaaaaaaaaaaaaa',_binary '\0','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','aaaaaaaaaaaaaaaaaa','\'mikejohnson@example.com\''),(27,'igor12@gmail.com','Igor Jeremic',_binary '\0','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','brake problem','janesmith@example.com');
+INSERT INTO `service_request` VALUES (15,'jeremicigor2003@gmail.com','aaaaaaaaaaaaaaaaaaaaa',_binary '\0','bbbbbbbbbbbbbbbbbbbbbbbbbbb','ttttttttttttttttttttttttttttt','igorjeremic128@gmail.com'),(16,'jeremicigor2003@gmail.com','aaaaaaaaaaaaaaaaaaaaa',_binary '\0','bbbbbbbbbbbbbbbbbbbbbbbbbbb','ttttttttttttttttttttttttttttt','igorjeremic128@gmail.com'),(17,'jeremicigor2003@gmail.com','aaaaaaaaaaaaaaaaaaa',_binary '\0','aaaaaaaaaaaaaaaaaaaaaaa','aaaaaaaaaaaaaaaaaaa','igorjeremic128@gmail.com'),(18,'jeremicigor2003@gmail.com','aaaaaaaaaaaaaaaaaaaaa',_binary '\0','cccccccccccccccccccccccccccccccc','ttttttttttttttttttttttttttttt','igorjeremic128@gmail.com'),(19,'jeremicigor2003@gmail.com','aaaaaaaaaaaaaaaaaaaaa',_binary '\0','bbbbbbbbbbbbbbbbbbbbbbbbb','ttttttttttttttttttttttttttttt','igorjeremic128@gmail.com'),(20,'jeremicigor2003@gmail.com','Igor Jeremic',_binary '','headlights dont work','light issue','johndoe@example.com'),(21,'jeremicigor2003@gmail.com','Igor Jeremic',_binary '','handbreak wont engage at all','handbreak issue','johndoe@example.com'),(22,'jeremicigor2003@gmail.com','Igor Jeremic',_binary '\0','car wont lock at all','lock issue','johndoe@example.com'),(23,'jeremicigor2003@gamil.com','Igor jeremic',_binary '','problem','problem','johndoe@example.com'),(24,NULL,NULL,_binary '\0',NULL,NULL,NULL),(25,NULL,NULL,_binary '\0',NULL,NULL,NULL),(26,'igorjeremic128@gmail.com','aaaaaaaaaaaaaaaaaaaaaa',_binary '\0','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','aaaaaaaaaaaaaaaaaa','\'mikejohnson@example.com\''),(27,'igor12@gmail.com','Igor Jeremic',_binary '\0','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','brake problem','janesmith@example.com'),(28,'shomi@gmail.com','Milos Obelic',_binary '\0','asaaaaaaaaaaaaaaaaaaaaaaaaaaaa','asdasdas','johndoe@example.com');
 /*!40000 ALTER TABLE `service_request` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-16 14:56:07
+-- Dump completed on 2025-06-16 20:01:22

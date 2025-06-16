@@ -27,7 +27,7 @@ CREATE TABLE `model_generation` (
   `generation_id` int NOT NULL,
   PRIMARY KEY (`model_id`,`generation_id`),
   KEY `generation_id` (`generation_id`),
-  CONSTRAINT `model_generation_ibfk_1` FOREIGN KEY (`model_id`) REFERENCES `model` (`model_id`),
+  CONSTRAINT `model_generation_ibfk_1` FOREIGN KEY (`model_id`) REFERENCES `model` (`model_id`) ON DELETE CASCADE,
   CONSTRAINT `model_generation_ibfk_2` FOREIGN KEY (`generation_id`) REFERENCES `generation` (`generation_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-04-16 14:56:05
+-- Dump completed on 2025-06-16 20:01:22

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import FirstCard from "../shop_components/FirstCard";
 import SecondCard from "../shop_components/SecondCard"
 import "./pages.css"
@@ -6,14 +6,36 @@ import CarSelectionMenu from "../shop_components/CarSelectionMenu.jsx";
 import image2 from "../images/service.jpg";
 import image3 from "../images/cart.png";
 import PartContainer from '../shop_components/PartContainer.jsx';
+import CartOverlay from '../shop_components/CartOverlay.jsx';
+import { UserContext } from '../context/UserProvider.jsx'
 
 export const Shop = () => {
     const [group, setGroup] = useState([]);
     const [partsTypeList, setPartsTypeList] = useState([]);
     const [pageCount, setPageCount] = useState(1);
-    const [selectedGroup, setSelectedGroup] = useState("");
-    const [selectedCar, setSelectedCar] = useState({});
     const [partList, setPartList] = useState([]);
+    const [isCartOpen, setIsCartOpen] = useState(false);
+    const [cartItems, setCartItems] = useState([]);
+    const { user } = useContext(UserContext);
+
+    const setCartItemsProp = (item) => {
+        setCartItems(prev => [...new Set([...prev, item])]);
+    }
+
+    useEffect(() => {
+        cartItems.map((item, index) => {
+            console.log(item.name)
+        })
+        
+    },[cartItems])
+
+    const handleCartClick = () => {
+        if(user.isLoggedIn === true){
+            setIsCartOpen(true);
+        }else{
+            alert('login to continue')
+        }
+    };
 
     function setPageCountProp(value){
         setPageCount(value)
@@ -24,6 +46,25 @@ export const Shop = () => {
     }
 
     useEffect(() => {
+        async function loadCartItems() {
+            if (user.isLoggedIn) {
+                try {
+                    const response = await fetch(`http://localhost:8080/parts/getCartItem?userId=${user.email}`);
+                    const data = await response.json();
+                    if(response.ok){
+                        setCartItems(data);
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+                } else {
+                setCartItems([]);
+            }
+        }
+        loadCartItems();
+    }, [user.isLoggedIn, user.email]);
+
+    useEffect(() => {
         async function loadGroupComponents() {
             if(pageCount === 1){
                 try {
@@ -31,7 +72,6 @@ export const Shop = () => {
                     const data = await response.json();
     
                     if (response.ok) {
-                        console.log("data: ", data);
                         setGroup(data);
                     } else {
                         console.error(data.error);
@@ -54,6 +94,7 @@ export const Shop = () => {
     return (
         <>
             <div className="main-shop-container">
+                <CartOverlay isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} cartItems={cartItems} />
                 <div className='shop-header' style={{display: "flex", flexDirection: "column"}}>
                     <div className='header-container'>
                         <button className='header-button back-button' onClick={handleGoBack}>Go back</button>
@@ -61,7 +102,7 @@ export const Shop = () => {
                             <input type="text" name="part-input" className=" bg-secondary text-light border-0" />
                             <button className='header-button'  >Search</button>
                         </div>
-                        <button className='header-button'>Cart  <img src={image3} style={{width: "1.5em"}}/></button>
+                        <button className='header-button' onClick={handleCartClick}>Cart  <img src={image3} style={{width: "1.5em"}}/></button>
                     </div>
                     
                     <h3 className='selected-car-title'>Car: </h3>
@@ -76,7 +117,7 @@ export const Shop = () => {
                 </div>
                 <h3 className="shop-title">Order best quality parts online</h3>
 
-                {(pageCount === 3) && <PartContainer setPageCountProp={setPageCountProp} parts = {partList} />}
+                {(pageCount === 3) && <PartContainer parts = {partList} setCartItemsProp={setCartItemsProp} />}
                 
                 {(pageCount === 1 || pageCount === 2) && <div className="part-carts-grid-container">
                     {

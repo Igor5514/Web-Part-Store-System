@@ -2,7 +2,6 @@ package com.example.server_354.Services;
 
 import com.example.server_354.object.Parts;
 import com.example.server_354.object.Vehicle;
-import org.springframework.data.jpa.repository.query.JSqlParserUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,12 +13,14 @@ public class PartService {
     private final ModelRepository modelRepository;
     private final GenerationRepository generationRepository;
     private final EngineRepository engineRepository;
+    private final UserRepository userRepository;
 
-    public PartService(PartRepository partRepository, ModelRepository modelRepository, GenerationRepository generationRepository, EngineRepository engineRepository){
+    public PartService(PartRepository partRepository, ModelRepository modelRepository, GenerationRepository generationRepository, EngineRepository engineRepository, UserRepository userRepository){
         this.partRepository = partRepository;
         this.modelRepository = modelRepository;
         this.generationRepository = generationRepository;
         this.engineRepository = engineRepository;
+        this.userRepository = userRepository;
     }
 
     public List<Parts> getPartsForSpecificVehicle(Vehicle vehicle) {
@@ -28,11 +29,16 @@ public class PartService {
         Integer engineId = engineRepository.getEngineIdByEngine(vehicle.getEngine());
         String partName = vehicle.getName();
 
-        System.out.println(vehicle.getMake());
-        System.out.println(modelId);
-        System.out.println(generationId);
-        System.out.println(engineId);
-
         return partRepository.getPartsForSpecificVehicle(modelId,generationId,engineId, partName);
+    }
+
+    public void postCartItem(Integer partId, String email) {
+        Integer userId = userRepository.getUserIdByEmail(email);
+        partRepository.postCartItem(partId,userId);
+    }
+
+    public List<Parts> getCartItems(String email) {
+        Integer userId = userRepository.getUserIdByEmail(email);
+        return partRepository.getCartItemsByUserId(userId);
     }
 }
