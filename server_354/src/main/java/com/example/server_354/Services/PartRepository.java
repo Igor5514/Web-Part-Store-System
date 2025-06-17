@@ -31,7 +31,7 @@ public interface PartRepository extends JpaRepository<Parts, Long> {
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO cart (user_id, part_id) values(:userId, :partId)", nativeQuery = true)
-    void postCartItem(@Param("userId") Integer userId,@Param("partId") Integer partId);
+    void postCartItem(@Param("partId") Integer partId,@Param("userId") Integer userId);
 
     @Query(value = "SELECT p.* FROM parts p " +
             "INNER JOIN cart c ON c.part_id = p.part_id " +

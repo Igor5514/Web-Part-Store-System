@@ -48,10 +48,23 @@ public class PartController {
     public ResponseEntity<?> getCartItems(@RequestParam("email") String email){
         try{
             List<Parts> cartItems = partService.getCartItems(email);
+            for(Parts part : cartItems){
+                System.out.println(part.toString());
+            }
             return ResponseEntity.ok(cartItems);
         }catch (Exception e){
             System.out.println(e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error trying to post cart item: "+e.getMessage());
+        }
+    }
+
+    @PostMapping("/postNewPart")
+    public ResponseEntity<?> addNewPart(@RequestBody Parts part){
+        try {
+
+            return ResponseEntity.ok("part added successfully");
+        }catch (Exception e){
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("failed to add part "+e.getMessage());
         }
     }
 

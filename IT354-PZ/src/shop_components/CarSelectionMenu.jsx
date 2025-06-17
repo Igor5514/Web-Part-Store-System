@@ -4,7 +4,7 @@ import ModelDropdown from './ModelDropdown';
 import GenerationDropdown from './GenerationDropdown';
 import EngineDropDown from './EngineDropdown';
 import "./ShopComponents.css"
-  import { useVehicle } from '../context/VehicleProvider'; 
+import { useVehicle } from '../context/VehicleProvider'; 
 
 const CarSelectionMenu = () => {
 

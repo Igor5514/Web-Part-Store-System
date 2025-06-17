@@ -49,7 +49,7 @@ export const Shop = () => {
         async function loadCartItems() {
             if (user.isLoggedIn) {
                 try {
-                    const response = await fetch(`http://localhost:8080/parts/getCartItem?userId=${user.email}`);
+                    const response = await fetch(`http://localhost:8080/parts/getCartItem?email=${user.email}`);
                     const data = await response.json();
                     if(response.ok){
                         setCartItems(data);
