@@ -45,34 +45,38 @@ const Login = ({setLoginVisibility, setRegistrationVisibility}) => {
         setErrors(newErrors);
 
         if (Object.values(newErrors).every((error) => error === "")) {
-            const response = await fetch("http://localhost:8080/users/getByEmail", {
+            const response = await fetch("http://localhost:8080/api/auth/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(formData)
             })
-            const data = await response.json();
             if(response.ok){
+                const data = await response.json();
                 setUser({
                     fullName: data.fullName,
                     email: data.email,
                     phoneNumber: data.phoneNumber,
                     role: data.role,
-                    isLoggedIn: true
+                    isLoggedIn: true,
+                    token: data.token
                 });
+                console.log(data.email);
+                console.log(data.fullName)
                 setLoginVisibility(false);
                 setRegistrationVisibility(false);
             }else{
-                console.error("Error", data.message);
-
+                const text = await response.text(); 
                 setErrors((prevErrors) => ({
                     ...prevErrors,
-                    password: data.message
+                    password: text || "login failed"
                 }));
+                
+                console.error('Login failed:', response.status, text);
+                return;
             }
         }
-
     }
 
     function handleRegisterClick(event) {

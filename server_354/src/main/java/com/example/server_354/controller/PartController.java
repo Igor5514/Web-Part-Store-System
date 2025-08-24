@@ -3,6 +3,7 @@ package com.example.server_354.controller;
 import com.example.server_354.Services.PartService;
 import com.example.server_354.object.Parts;
 import com.example.server_354.object.Vehicle;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -44,14 +45,16 @@ public class PartController {
     }
 
     @GetMapping("/getCartItem")
-    public ResponseEntity<?> getCartItems(@RequestParam("email") String email){
-        try{
-            List<Parts> cartItems = partService.getCartItems(email);
-            return ResponseEntity.ok(cartItems);
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error trying to post cart item: "+e.getMessage());
+    public ResponseEntity<?> getCartItems(@RequestParam("email") String email, @RequestHeader("Authorization") String authHeader) {
+        if (!authHeader.startsWith("Bearer ")) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid token");
         }
+
+        String token = authHeader.substring(7);
+        System.out.println("JWT token: " + token);
+
+        List<Parts> cartItems = partService.getCartItems(email);
+        return ResponseEntity.ok(cartItems);
     }
 
     @PostMapping("/postNewPart")

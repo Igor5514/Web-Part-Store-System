@@ -39,7 +39,10 @@ const PartBox = ({ parts = [], setCartItemsProp }) => {
         console.log(cartItem.partId)
         try{
             const response = await fetch(`http://localhost:8080/parts/postCartItem?email=${user.email}&partId=${cartItem.partId}`, {
-                method: 'POST'   
+                method: 'POST',
+                headers: {
+                    'Authorization' : `Bearer ${user.token}`
+                }
             })
             const result = await response.text();
             if(response.ok){

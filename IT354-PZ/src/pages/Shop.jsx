@@ -47,9 +47,16 @@ export const Shop = () => {
 
     useEffect(() => {
         async function loadCartItems() {
+            console.log(user.email);
             if (user.isLoggedIn) {
                 try {
-                    const response = await fetch(`http://localhost:8080/parts/getCartItem?email=${user.email}`);
+                    const response = await fetch(`http://localhost:8080/parts/getCartItem?email=${user.email}`,{
+                        method: 'GET',
+                        headers: {
+                            'Authorization' : `Bearer ${user.token}`
+                        }
+                    });
+                    console.log(user.token)
                     const data = await response.json();
                     if(response.ok){
                         setCartItems(data);

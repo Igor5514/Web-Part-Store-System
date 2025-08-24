@@ -89,7 +89,6 @@ public class UserController {
             String email = roleRequest.getEmail();
             boolean isAccepted = roleRequest.isAccepted();
 
-
             userService.updateRequestedRoleStatus(role,email, isAccepted);
             message = "role successfully updated";
             return ResponseEntity.ok(message);

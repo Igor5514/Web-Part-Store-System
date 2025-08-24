@@ -8,7 +8,8 @@ export const UserProvider = ({children}) => {
         email: '',
         phoneNumber: '',
         role: '',
-        isLoggedIn: false
+        isLoggedIn: false,
+        token: ''
     })
 
     return (
