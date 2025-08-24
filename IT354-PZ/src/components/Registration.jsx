@@ -26,6 +26,7 @@ const Registration = ({ setLoginVisibility, setRegistrationVisibility }) => {
             body: JSON.stringify({email: email}),
         });
         const exist = await response.json()
+        console.log(exist);
         return exist;
     }
 

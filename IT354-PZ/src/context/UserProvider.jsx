@@ -7,6 +7,7 @@ export const UserProvider = ({children}) => {
         fullName: '',
         email: '',
         phoneNumber: '',
+        role: '',
         isLoggedIn: false
     })
 

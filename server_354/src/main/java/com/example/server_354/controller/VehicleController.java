@@ -35,9 +35,9 @@ public class VehicleController {
     }
 
     @PostMapping("/getModel")
-    public ResponseEntity<?> getVehicleModel(@RequestBody String make){
-        String substrigedMake = substringIncomingString(make);
-        Integer makeId = vehicleService.getMakeIdByMake(substrigedMake);
+    public ResponseEntity<?> getVehicleModel(@RequestBody Map<String,String> emailMap){
+        String make = emailMap.get("make");
+        Integer makeId = vehicleService.getMakeIdByMake(make);
         Map<String, String> errorResponse = new HashMap<>();
         try{
             List<String> modelList = vehicleService.getModelByMakeId(makeId);
@@ -50,11 +50,11 @@ public class VehicleController {
     }
 
     @PostMapping("/getGeneration")
-    public ResponseEntity<?> getVehicleGeneration(@RequestBody String model){
-        String substrigedModel = substringIncomingString(model);
+    public ResponseEntity<?> getVehicleGeneration(@RequestBody Map<String,String> modelMap){
+        String model = modelMap.get("model");
         Map<String, String> errorResponse = new HashMap<>();
         try{
-            List<String> generationList = vehicleService.getGenerationByModelId(substrigedModel);
+            List<String> generationList = vehicleService.getGenerationByModelId(model);
             return ResponseEntity.ok(generationList);
         }catch (DataAccessException e){
             System.out.println(e.getMessage());
@@ -100,11 +100,11 @@ public class VehicleController {
 
 
     @PostMapping("/getPartsList")
-    private ResponseEntity<?> getPartsList(@RequestBody String partGroup){
+    private ResponseEntity<?> getPartsList(@RequestBody Map<String,String> partGroupMap){
         Map<String,String> response = new HashMap<>();
-        String partGroupSub = substringIncomingString(partGroup);
+        String groupName = partGroupMap.get("groupName");
         try{
-            int groupId = vehicleService.getGroupIdByGroupName(partGroupSub);
+            int groupId = vehicleService.getGroupIdByGroupName(groupName);
             List<Part> list = new ArrayList<>();
             List<CarPartType> partsList = vehicleService.getPartsTypeByGroupId(groupId);
             for(CarPartType pg : partsList){

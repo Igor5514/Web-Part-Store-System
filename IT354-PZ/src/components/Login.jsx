@@ -58,6 +58,7 @@ const Login = ({setLoginVisibility, setRegistrationVisibility}) => {
                     fullName: data.fullName,
                     email: data.email,
                     phoneNumber: data.phoneNumber,
+                    role: data.role,
                     isLoggedIn: true
                 });
                 setLoginVisibility(false);

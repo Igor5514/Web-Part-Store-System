@@ -35,7 +35,6 @@ public class PartController {
     public ResponseEntity<?> postCartItem(@RequestParam("email") String email,
                                           @RequestParam("partId") Integer partId){
         try{
-            System.out.println(email +" "+ partId);
             partService.postCartItem(partId, email);
             return ResponseEntity.ok("part successfully added");
         }catch (Exception e){
@@ -48,9 +47,6 @@ public class PartController {
     public ResponseEntity<?> getCartItems(@RequestParam("email") String email){
         try{
             List<Parts> cartItems = partService.getCartItems(email);
-            for(Parts part : cartItems){
-                System.out.println(part.toString());
-            }
             return ResponseEntity.ok(cartItems);
         }catch (Exception e){
             System.out.println(e.getMessage());

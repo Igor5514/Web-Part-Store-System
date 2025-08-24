@@ -14,12 +14,11 @@ const MakeDropdown = ({setMake}) => {
                 if(isMakeDropdownClicked) {
                     const response = await fetch("http://localhost:8080/vehicle/getMake");
                     const data = await response.json();
-                    
                     if(response.ok){
                         setMakeItems(prevItems => [...prevItems, ...data.map(element => element.make )]);
                     }
                 }else{
-                    setMakeItems([]);
+                   setMakeItems([]);
                 }
                 
             } catch (error) {

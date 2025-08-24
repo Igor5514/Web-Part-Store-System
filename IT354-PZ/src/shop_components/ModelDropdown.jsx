@@ -16,8 +16,9 @@ const MakeDropdown = ({setModel, selectedMake}) => {
                         headers: {
                           "Content-Type": "application/json"
                         },
-                        body: JSON.stringify(selectedMake)
+                        body: JSON.stringify({make: selectedMake})
                       })
+                      
                     const data = await response.json();
             
                     if(response.ok){

@@ -16,7 +16,7 @@ const GenerationDropdown = ({setGeneration, selectedModel}) => {
                         headers: {
                           "Content-Type": "application/json"
                         },
-                        body: JSON.stringify(selectedModel)
+                        body: JSON.stringify({model: selectedModel})
                       })
                     const data = await response.json();
             

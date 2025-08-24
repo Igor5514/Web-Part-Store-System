@@ -65,7 +65,6 @@ public class UserController {
 
     @PostMapping("/getResByEmail")
     public boolean getResponseByEmail(@RequestBody Map<String,String> emailMap){
-        System.out.println(emailMap.get("email"));
         return userService.getResponseByEmail(emailMap.get("email"));
     }
 

@@ -10,7 +10,7 @@ const FirstCard = ({title, paragraphs, img, setPageCountProp, setPartsTypeList})
                 headers: {
                     "Content-Type" : "application/json"
                 },
-                body: JSON.stringify(groupName)
+                body: JSON.stringify({groupName: groupName})
             })
             const data = await response.json();
             setPartsTypeList(data)
